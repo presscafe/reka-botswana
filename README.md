@@ -25,7 +25,7 @@ npm run serve        # serve the production build on :5000
 A static Progressive Web App (Gatsby 4, React 18) for the Reka Botswana
 marketplace:
 
-- **Catalogue** — 12 products across Apparel & Corporate Wear, Pantry & Natural
+- **Catalogue** — 17 products across Apparel & Corporate Wear, Pantry & Natural
   Food, Beauty & Wellness, Home & Craft, Accessories and Gifts, with per-maker
   origin, lead time and pricing in Botswana Pula.
 - **Ordering** — no online payment by design. Checkout builds an order enquiry
@@ -43,7 +43,7 @@ marketplace:
 | `src/pages/` | Routes (home, shop, search, cart, order-confirmation, faq, support, about, journal/, 404) |
 | `src/templates/` | `product.js` (PDP) and `journalArticle.js` — built per item at build time |
 | `src/components/` | Reusable UI (Header/Footer/Hero/Button/…) |
-| `src/helpers/product.json` | The catalogue (12 SKUs) — **illustrative, researched** |
+| `src/helpers/product.json` | The catalogue (17 SKUs) — **illustrative, researched** |
 | `src/helpers/blog.json` | Journal articles (4, dated) |
 | `src/helpers/catalog.js` | Access layer (getProducts, getProductBySlug, searchProducts, …) |
 | `src/context/CartContext.js` | Cart state (localStorage), `useCart()` |
@@ -70,7 +70,7 @@ marketplace:
    listing deliberately avoids the brand name.
 6. **Delivery fees & lead times** in `config.json` are working estimates, not
    carrier quotes.
-7. **Imagery** — AI-generated illustrative photography for the 12 SKUs; no
+7. **Imagery** — AI-generated illustrative photography for the 17 SKUs; no
    rights issues, but it is not photography of real products.
 8. **VAT** — BWP prices; VAT handling stated generically; confirm VAT
    registration and invoice wording with an accountant.
@@ -83,6 +83,9 @@ marketplace:
 - [`docs/research-botswana-made-portfolio.md`](docs/research-botswana-made-portfolio.md) —
   the deep research: real Botswana-made landscape, named producers, sources,
   and the alignment table for every SKU.
+- [`docs/research-product-pipeline.md`](docs/research-product-pipeline.md) —
+  round 2: price-verified retail anchors (chocolate, biltong, phane, Rusks,
+  wool craft) and the five SKUs added to the catalogue.
 - [`docs/decisions.md`](docs/decisions.md) — why the architecture, ordering
   model, offline strategy and data choices are what they are.
 

@@ -336,5 +336,14 @@ MOU. **No outreach has been made yet.**
 16. phytoafrica.com — Phytoafrica (marula/baobab/mafura bulk oils)
 17. Wikibooks — Cuisine of Botswana (seswaa, phane, morama origins)
 
+## 8. Round 2 (2026-11-11)
+
+Deeper retail-level research (price-verified SKUs, craft institutions, breweries) and
+five catalogue additions live in **[research-product-pipeline.md](research-product-pipeline.md)**.
+Highlights: Sweet Sensations Kgeru morula-seed chocolate (#PushaBW, P33/80 g), Kalahari
+Chocolates moulded giftables (P142–217), Earth Vitamins biltong (P109/250 g),
+Lentswe-la-Oodi Weavers (est. 1973, women-owned, Kgatleng District), Botswana Biltong
+Company (GICP; operational status UNVERIFIED). Alcohol excluded by policy.
+
 *Nothing in §6 should be read as external fact for external publication without
 the primary source. This document is internal strategy, not marketing copy.*

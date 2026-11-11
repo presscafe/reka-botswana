@@ -77,8 +77,18 @@ content decisions.
   so there is one source of truth for policy text.
 - Order confirmation route: **`/order-confirmation`** (file
   `order-confirmation.js`); `OrderSummary` component (hardcoded P440) deleted.
-- Images: AI-generated illustrative photography for all 12 SKUs + hero;
+- Images: AI-generated illustrative photography for all 17 SKUs + hero;
   generic banners retained only where they were usable.
+
+## Round 2 — catalogue expansion (2026-11-11)
+
+Five researched-aligned illustrative SKUs added (phane bites, morula milk
+chocolate, sorghum choc-chip cookies, sliced biltong, handwoven wool cushion
+cover) — full analysis and real price/maker anchors in
+`docs/research-product-pipeline.md`. All remain illustrative; biltong and
+chocolate anchors are verified retail observations (Earth Vitamins ~P22/50 g;
+Sweet Sensations Kgeru P33/80 g; Kalahari Chocolates giftables P142–217).
+Alcohol (KBL/St Louis) and therapeutic-claim lanes deliberately excluded.
 
 ## Verification status (as of commit)
 
