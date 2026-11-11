@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { navigate } from 'gatsby';
 import * as styles from './ProductCard.module.css';
 
@@ -6,30 +6,26 @@ import Icon from '../Icons/Icon';
 import CurrencyFormatter from '../CurrencyFormatter';
 
 const ProductCard = (props) => {
-  const [isWishlist, setIsWishlist] = useState(false);
   const {
+    slug,
     image,
     imageAlt,
     name,
     price,
     originalPrice,
     meta,
-    showQuickView,
+    onQuickView,
     height = 580,
   } = props;
 
   const handleRouteToProduct = () => {
-    navigate('/product/sample');
+    if (slug) navigate(`/product/${slug}`);
+    else navigate('/shop');
   };
 
   const handleQuickView = (e) => {
     e.stopPropagation();
-    showQuickView();
-  };
-
-  const handleFavorite = (e) => {
-    e.stopPropagation();
-    setIsWishlist(!isWishlist);
+    if (typeof onQuickView === 'function') onQuickView();
   };
 
   return (
@@ -37,32 +33,28 @@ const ProductCard = (props) => {
       <div
         className={styles.imageContainer}
         onClick={() => handleRouteToProduct()}
-        role={'presentation'}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') handleRouteToProduct();
+        }}
+        role={'button'}
+        tabIndex={0}
+        aria-label={`View ${name}`}
       >
         <img style={{ height: `${height}px` }} src={image} alt={imageAlt}></img>
-        <div
+        <button
+          type="button"
+          aria-label={`Quick add ${name} to bag`}
           className={styles.bagContainer}
-          role={'presentation'}
           onClick={(e) => handleQuickView(e)}
         >
           <Icon symbol={'bagPlus'} />
-        </div>
-        <div
-          className={styles.heartContainer}
-          role={'presentation'}
-          onClick={(e) => handleFavorite(e)}
-        >
-          <Icon symbol={'heart'} />
-          <div
-            className={`${styles.heartFillContainer} ${
-              isWishlist === true ? styles.show : styles.hide
-            }`}
-          >
-            <Icon symbol={'heartFill'}></Icon>
-          </div>
-        </div>
+        </button>
       </div>
-      <div className={styles.detailsContainer}>
+      <button
+        type="button"
+        className={styles.detailsContainer}
+        onClick={() => handleRouteToProduct()}
+      >
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>
           <span
@@ -77,7 +69,7 @@ const ProductCard = (props) => {
           )}
         </div>
         <span className={styles.meta}>{meta}</span>
-      </div>
+      </button>
     </div>
   );
 };

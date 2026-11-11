@@ -1,35 +1,42 @@
 {
-  "name": "gatsby-ecommerce-theme",
+  "name": "reka-botswana-web",
   "version": "1.0.0",
   "private": true,
-  "description": "An e-commerce theme designed by Matter Design for Netlify.",
-  "author": "Matter Design",
+  "description": "Reka Botswana — the Made-in-Botswana marketplace and maker portfolio. Offline-first progressive web app.",
+  "author": "Reka Botswana",
   "keywords": [
+    "botswana",
+    "made-in-botswana",
+    "pwa",
+    "marketplace",
     "gatsby"
   ],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop -p 5000",
     "build": "gatsby build",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -p 5000",
     "clean": "gatsby clean",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
-    "plop": "plop"
+    "smoke": "node scripts/smoke-test.js"
   },
   "dependencies": {
-    "@netlify/plugin-gatsby": "^3.8.0",
-    "cypress": "^10.0.3",
+    "@fontsource/inria-serif": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/yeseva-one": "5.3.0",
     "gatsby": "^4.5.4",
-    "gatsby-plugin-manifest": "^4.14.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
-    "react-slick": "^0.30.0"
+    "react-slick": "^0.30.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "gatsby-plugin-netlify": "^5.0.0",
-    "netlify-plugin-cypress": "~2.2.0",
     "plop": "^3.0.5",
     "prettier": "^2.6.2"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

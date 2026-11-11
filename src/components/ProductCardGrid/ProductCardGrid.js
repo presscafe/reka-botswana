@@ -7,8 +7,8 @@ import QuickView from '../QuickView';
 import Slider from '../Slider';
 
 const ProductCardGrid = (props) => {
-  const [showQuickView, setShowQuickView] = useState(false);
-  const { height, columns = 3, data, spacing, showSlider = false } = props;
+  const [quickViewProduct, setQuickViewProduct] = useState(null);
+  const { height, columns = 3, data = [], spacing, showSlider = false } = props;
   const columnCount = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
   };
@@ -17,16 +17,16 @@ const ProductCardGrid = (props) => {
     return data.map((product, index) => {
       return (
         <ProductCard
-          key={index}
+          key={product.slug || index}
           height={height}
+          slug={product.slug}
           price={product.price}
           imageAlt={product.alt}
           name={product.name}
           image={product.image}
           meta={product.meta}
           originalPrice={product.originalPrice}
-          link={product.link}
-          showQuickView={() => setShowQuickView(true)}
+          onQuickView={() => setQuickViewProduct(product)}
         />
       );
     });
@@ -49,8 +49,16 @@ const ProductCardGrid = (props) => {
         </div>
       )}
 
-      <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>
-        <QuickView close={() => setShowQuickView(false)} />
+      <Drawer
+        visible={quickViewProduct !== null}
+        close={() => setQuickViewProduct(null)}
+      >
+        {quickViewProduct && (
+          <QuickView
+            product={quickViewProduct}
+            close={() => setQuickViewProduct(null)}
+          />
+        )}
       </Drawer>
     </div>
   );

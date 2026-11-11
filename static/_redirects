@@ -1,0 +1,8 @@
+/blog /journal 301
+/blog/* /journal/:splat 301
+/orderConfirm /order-confirmation 301
+/how-to-use / 301
+/login / 301
+/signup / 301
+/forgot / 301
+/account/* / 301

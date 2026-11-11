@@ -1,82 +1,33 @@
 /**
- * Is value numeric
- * 
- * Determine whether variable is a number
- * 
- * @param {*} str 
- *
-  import { isNumeric } from '../helpers/general'
+ * Shared formatting / validation helpers for Reka Botswana.
+ */
 
-  isNumeric(value)
-*/
+/**
+ * Checks if a value is numeric.
+ * isNumeric(value)
+ */
 function isNumeric(str) {
-  if (['string', 'number'].indexOf(typeof str) === -1) return false; // we only process strings and numbers!
-  return (
-    !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-    !isNaN(parseFloat(str))
-  ); // ...and ensure strings of whitespace fail
+  if (['string', 'number'].indexOf(typeof str) === -1) return false;
+  return !isNaN(str) && !isNaN(parseFloat(str));
 }
 
 /**
- * Validate email format
- * 
- * Checks the provided email address and validates its format
- * 
- * @param   {String} email  The email address
- * 
-    import { validateEmail } from '../helpers/general'
-
-    validateEmail(email)
+ * Validates an email address with a pragmatic pattern.
  */
 function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if (!email) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email).trim());
 }
 
 /**
- * Validate strong password format
- * 
- * 
- * @param   {String} password  The password
- * 
-    import { validateStrongPassword } from '../helpers/general'
-
-    validateStrongPassword(email)
+ * Checks whether a value is empty (null/undefined/blank string/empty array/object).
  */
-function validateStrongPassword(password) {
-  return /(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(password);
+function isEmpty(value) {
+  if (value === null || value === undefined) return true;
+  if (typeof value === 'string') return value.trim().length === 0;
+  if (Array.isArray(value)) return value.length === 0;
+  if (typeof value === 'object') return Object.keys(value).length === 0;
+  return false;
 }
 
-/**
- * Checks for empty string
- * 
- * @param   {String} email  input
- * 
-    import { isEmpty } from '../helpers/general'
-
-    isEmpty(email)
- */
-function isEmpty(input) {
-  if (input === '' || input === null || input === undefined) return true;
-}
-
-/**
- * Checks if user is authenticated
- * 
- * 
- * 
-    import { isAuth } from '../helpers/general'
-
-    isAuth()
- */
-function isAuth() {
-  const isBrowser = typeof window !== 'undefined';
-  if (isBrowser) {
-    const token = window.localStorage.getItem('key');
-    if (token) return true;
-    else return false;
-  } else {
-    return true;
-  }
-}
-
-export { isNumeric, validateEmail, validateStrongPassword, isEmpty, isAuth };
+export { isNumeric, validateEmail, isEmpty };

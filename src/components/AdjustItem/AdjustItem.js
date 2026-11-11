@@ -1,15 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Icon from '../Icons/Icon';
 import * as styles from './AdjustItem.module.css';
 
+/**
+ * Controlled quantity stepper.
+ * Props:
+ *   value      {number}  current quantity (clamped at 1)
+ *   onChange   {(qty:number) => void}
+ *   isTransparent {boolean}
+ * If `value`/`onChange` are omitted the component keeps internal state.
+ */
 const AdjustItem = (props) => {
-  const { isTransparent } = props;
-  const [qty, setQty] = useState(1);
+  const {
+    isTransparent = false,
+    value,
+    onChange,
+    ariaLabel = 'Quantity',
+  } = props;
+  const [internal, setInternal] = React.useState(1);
+  const isControlled = value !== undefined && typeof onChange === 'function';
+  const qty = isControlled ? Math.max(1, Number(value) || 1) : internal;
 
-  const handleOnChange = (e) => {
-    const num = parseInt(e.target.value);
-    setQty(num);
+  const commit = (next) => {
+    const clamped = Math.max(1, parseInt(next, 10) || 1);
+    if (isControlled) onChange(clamped);
+    else setInternal(clamped);
   };
 
   return (
@@ -18,31 +34,32 @@ const AdjustItem = (props) => {
         isTransparent === true ? styles.transparent : ''
       }`}
     >
-      <div
+      <button
+        type="button"
+        aria-label="Decrease quantity"
         className={styles.iconContainer}
-        role={'presentation'}
-        onClick={() => {
-          if (qty <= 1) return;
-          setQty(qty - 1);
-        }}
+        onClick={() => commit(qty - 1)}
       >
         <Icon symbol={'minus'}></Icon>
-      </div>
+      </button>
       <div className={styles.inputContainer}>
         <input
+          aria-label={ariaLabel}
           className={`${isTransparent === true ? styles.transparentInput : ''}`}
-          onChange={(e) => handleOnChange(e)}
+          onChange={(e) => commit(e.target.value)}
           type={'number'}
+          min={1}
           value={qty}
         ></input>
       </div>
-      <div
-        role={'presentation'}
-        onClick={() => setQty(qty + 1)}
+      <button
+        type="button"
+        aria-label="Increase quantity"
+        onClick={() => commit(qty + 1)}
         className={styles.iconContainer}
       >
         <Icon symbol={'plus'}></Icon>
-      </div>
+      </button>
     </div>
   );
 };

@@ -1,66 +1,70 @@
 [
-    {
-        "title": "The new standard of Opening and Closing",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog1.png",
-        "link": "/blog/sample",
-        "excerpt": "London-based seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog2.png",
-        "link": "/blog/sample",
-        "excerpt": "London-based seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "It is a long established fact that a reader by the readable",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog3.png",
-        "link": "/blog/sample",
-        "excerpt": "London-basedsonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "It is a long establishable",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog3.png",
-        "link": "/blog/sample",
-        "excerpt": "London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "It is a long estab the readable",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog2.png",
-        "link": "/blog/sample",
-        "excerpt": "Loproducers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "The new standard of Opening and Closing",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog1.png",
-        "link": "/blog/sample",
-        "excerpt": "London-based floral tish flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "It is a long established fact that a reader by the readable",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog2.png",
-        "link": "/blog/sample",
-        "excerpt": "London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    },
-    {
-        "title": "It is a long et a reader by the readable t is a long et a reader by the rea",
-        "category": "design",
-        "alt": "blog new standard of closing",
-        "image": "/blogs/blog2.png",
-        "link": "/blog/sample",
-        "excerpt": "London-bs and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
-    }
-  ]
+  {
+    "slug": "why-made-in-botswana-matters",
+    "title": "Why Made in Botswana matters more than ever",
+    "category": "Industry",
+    "alt": "Locally made goods at a Gaborone market stall",
+    "image": "/banner1.jpg",
+    "link": "/journal/why-made-in-botswana-matters",
+    "excerpt": "Every pula spent on a Botswana-made product keeps wages, skills and suppliers inside the country. We look at what genuine local production means for jobs, quality and pride.",
+    "body": [
+      "Buying local is not sentiment \u2014 it is arithmetic. When a Gaborone workshop cuts, sews, finishes and packs a garment, the wages paid along that line circulate inside Botswana: the machinist, the trim supplier, the printer, the courier, the market trader. Imported goods short-circuit that loop almost entirely.",
+      "Made-in-Botswana also means accountability you can see. Our makers are reachable on WhatsApp, their premises are visitable, and their quality issues are resolved by people, not call centres. If something is wrong with your order, you speak to the workshop \u2014 and to us \u2014 directly.",
+      "Reka Botswana exists to make that choice easy. We curate makers whose products are genuinely designed, grown or made in Botswana, we show the origin of each item on the product page, and we keep ordering transparent: you see the price, the lead time and the maker before you commit.",
+      "One honest note: we are a young platform. Our current catalogue is a founding selection. As verified makers come on board, the range will grow \u2014 and our listings will always say where something was made. If a product has imported inputs, we will say so rather than hide it."
+    ],
+    "published": "2026-11-11",
+    "readingTime": "4 min read"
+  },
+  {
+    "slug": "corporate-wear-made-to-order-gaborone",
+    "title": "Corporate wear, made to order in Gaborone",
+    "category": "Apparel",
+    "alt": "Stack of khaki and navy corporate polo shirts in a Gaborone workshop",
+    "image": "/products/reka-heritage-polo.jpg",
+    "link": "/journal/corporate-wear-made-to-order-gaborone",
+    "excerpt": "Most 'corporate suppliers' in the region resell imported stock with a logo. We build short-run, locally sewn programmes \u2014 here is how a typical order runs from brief to delivery.",
+    "body": [
+      "A corporate clothing order usually starts the same way: a team needs polos, jackets or caps with a consistent fit and a clean logo, on a date that matters. The usual route \u2014 imported flatpacks plus rebranding \u2014 is cheap on paper and disappointing in wear.",
+      "Our apparel studio runs on a different model: demand-led, short-run production. From 20 printed or 50 embroidered pieces, we cut and sew locally, so fit consistency, fabric hand-feel and reorder speed are under local control. You approve a sample before bulk starts.",
+      "The process: (1) send your brief \u2014 quantities, sizes split, logo file, deadline; (2) receive a written quote within two working days; (3) approve the pre-production sample; (4) we cut, sew, decorate and pack; (5) delivery or collection \u2014 Gaborone within days, nationwide by courier.",
+      "Typical lead times are 10 working days after sample approval for embroidery programmes. For urgent events, printed tees can ship faster \u2014 ask. Every programme is quoted per job; there is no price list that survives the real world."
+    ],
+    "published": "2026-11-11",
+    "readingTime": "5 min read"
+  },
+  {
+    "slug": "otse-moringa-dryland-crop",
+    "title": "From Otse: the case for moringa as a dryland crop",
+    "category": "Agribusiness",
+    "alt": "Young moringa rows on red sand near Otse, Botswana",
+    "image": "/products/reka-moringa.jpg",
+    "link": "/journal/otse-moringa-dryland-crop",
+    "excerpt": "Moringa tolerates Botswana's dry spells, needs modest water, and sells as powder into food and wellness channels. We look at the honest agronomy and the economics.",
+    "body": [
+      "Moringa oleifera earns its reputation in difficult climates: it establishes fast, coppices readily, and yields leaf in hot, low-rainfall conditions where many vegetables fail. Around Otse's red sands, that resilience matters more than yield records from subtropical trials.",
+      "The honest economics: leaf powder is a low-volume, higher-value product. The crop rewards disciplined harvesting, shade-drying and milling \u2014 labour that employs local people \u2014 rather than heavy machinery. Water demand is real but modest compared with maize, and drip or basin watering keeps losses down.",
+      "What we sell is what we grow and mill: single-origin Otse moringa, air-dried, no additives. It is a food, not a medicine; claims beyond nutrition belong to pharmacology, not to us. Buyers should treat it as a nutritious addition to meals.",
+      "The bigger prize is the model, not the jar: dryland smallholders aggregating shade-dried leaf into consistent batches, milled within a day of drying, packed under one quality standard. That is the Otse Botanicals approach, and it is exactly the kind of value chain Reka Botswana was built to surface."
+    ],
+    "published": "2026-11-11",
+    "readingTime": "6 min read"
+  },
+  {
+    "slug": "phane-basket-economy",
+    "title": "The women behind Botswana's phane baskets",
+    "category": "Craft",
+    "alt": "Hands weaving a phane palm basket",
+    "image": "/highlight.jpg",
+    "link": "/journal/phane-basket-economy",
+    "excerpt": "For generations, coil baskets winnowed mopane worm harvests across northern Botswana. Today the same hands supply a global market for authentic Botswanan craft.",
+    "body": [
+      "The phane basket is not a souvenir improvisation. It is a working tool refined over generations: palm fibre, coil-sewn, dyed with natural roots and leaves, sized to winnow and carry mopane worms \u2014 phane \u2014 after the autumn rains.",
+      "That use defines the craft's integrity. Weavers in the Okavango Panhandle still split, dry and dye palm by hand, then stitch with a bone awl. Patterns carry names and meanings; a good basket is tight enough to hold grain and strong enough to outlast the woman who made it.",
+      "Demand outside Botswana has pulled at this tradition \u2014 fairly and unfairly. Fair: it pays cash for skilled hand labour. Unfair: intermediaries who pay a fraction of the market and sell at ten times the price. We work only through the cooperative's own pricing, and we say so at checkout.",
+      "Each basket we list is one of a kind. Photographs show representative examples; your basket's exact tone and pattern will be its own. That is not a flaw \u2014 it is the proof of handwork, and we will never pretend otherwise."
+    ],
+    "published": "2026-11-11",
+    "readingTime": "5 min read"
+  }
+]
