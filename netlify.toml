@@ -1,16 +1,31 @@
+# Reka Botswana — static PWA deployed from `public/`.
+# Works on Netlify and any static host that honours `_headers`.
 [build]
   command = "gatsby build"
-  functions = "netlify/functions"
   publish = "public"
 
-[[plugins]]
-  package = "@netlify/plugin-gatsby"
+[build.environment]
+  NODE_VERSION = "20"
+  # Skip optional native image pipeline (libvips) — not used by this build.
+  NPM_CONFIG_OMIT = "optional"
 
-[[plugins]]
-  package = "netlify-plugin-cypress"
+# Security headers for all routes
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-  [plugins.inputs.postBuild]
-    enable = true
+# Gatsby fingerprinted assets are immutable
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-  [plugins.inputs]
-    enable = false
+# Service worker must always be fresh
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
