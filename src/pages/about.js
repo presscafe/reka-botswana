@@ -4,21 +4,31 @@ import Container from '../components/Container';
 import Hero from '../components/Hero';
 import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
+import Button from '../components/Button';
+import Config from '../config.json';
 
 import * as styles from './about.module.css';
+
 const AboutPage = (props) => {
-  let historyRef = useRef();
-  let valuesRef = useRef();
-  let sustainabilityRef = useRef();
+  const storyRef = useRef();
+  const makersRef = useRef();
+  const corporateRef = useRef();
 
   const handleScroll = (elementReference) => {
-    if (elementReference) {
+    if (elementReference && elementReference.current) {
       window.scrollTo({
         behavior: 'smooth',
-        top: elementReference.current.offsetTop - 280,
+        top: elementReference.current.offsetTop - 200,
       });
     }
   };
+
+  const makersWhatsApp = `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(
+    'Hello Reka Botswana — I run a Botswana workshop and would like to list my products.'
+  )}`;
+  const corporateWhatsApp = `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(
+    'Hello Reka Botswana — I need a quote for corporate wear (quantities, sizes, logo, deadline).'
+  )}`;
 
   return (
     <Layout disablePaddingBottom>
@@ -26,100 +36,146 @@ const AboutPage = (props) => {
         {/* Hero Container */}
         <Hero
           maxWidth={'900px'}
-          image={'/about.png'}
-          title={`Sydney \n A British brand since 1860`}
+          image={'/banner1.jpg'}
+          title={'Botswana makes.\nWe make buying it easy.'}
         />
 
         <div className={styles.navContainer}>
-          <ThemeLink onClick={() => handleScroll(historyRef)} to={'#history'}>
-            History
+          <ThemeLink onClick={() => handleScroll(storyRef)} to={'#story'}>
+            Our Story
           </ThemeLink>
-          <ThemeLink onClick={() => handleScroll(valuesRef)} to={'#values'}>
-            Values
+          <ThemeLink onClick={() => handleScroll(makersRef)} to={'#makers'}>
+            List Your Workshop
           </ThemeLink>
           <ThemeLink
-            onClick={() => handleScroll(sustainabilityRef)}
-            to={'#sustainability'}
+            onClick={() => handleScroll(corporateRef)}
+            to={'#corporate'}
           >
-            Sustainability
+            Corporate &amp; Institutions
           </ThemeLink>
         </div>
 
         <Container size={'large'} spacing={'min'}>
-          <div className={styles.detailContainer} ref={historyRef}>
+          <div className={styles.detailContainer} ref={storyRef} id={'story'}>
             <p>
-              Founded in 1860, Sydney is an innovative British brand with a
-              contemporary edge. We make timeless everyday luxury clothing.
-            </p>
-            <br />
-            <br />
-            <p>
-              We created some of the world's first T-shirts and spent decades
-              perfecting the feel of the cotton. Today we are the only brand
-              that makes T-shirts in its own factory in the UK. And we do this
-              in the same factory we have occupied since 1937.
+              Reka Botswana is a curation and ordering service for products
+              genuinely designed, grown or made in Botswana. We started with
+              clothing — where our experience runs deepest — and we are
+              widening carefully into pantry, beauty and craft, one verified
+              maker at a time.
             </p>
           </div>
-        </Container>
 
-        <div className={styles.imageContainer}>
-          <img alt={'shirt brand'} src={'/about1.png'}></img>
-        </div>
-
-        <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            <h3>Our Values</h3>
-            <div ref={valuesRef}>
+            <h3>Why we exist</h3>
+            <div>
               <p>
-                Sunspel produced some of the world's earliest T-shirts. In the
-                late 1800s the business made luxury tunics and undershirts from
-                lightweight Sea Island cotton for export to the Far East and
-                other warm climates. While these garments initially had silk
-                buttoned plackets, these were removed in the early 1900s and
-                replaced with simple bound necks to reduce manufacturing costs -
-                creating the T-shirt. We've supplied the world as the T-shirt
-                has evolved from underwear to outerwear, from symbol of youthful
-                rebellion to everyday wardrobe staple, and we've spent decades
-                refining its every last aspect.
+                Botswana imports most of what it consumes, even things it can
+                make well: garments, staples, craft, natural-cosmetic
+                ingredients. Local makers are good — and invisible. They sell
+                from pavements, Facebook pages and WhatsApp statuses, with no
+                shopfront, no catalogue and no ordering system a buyer can
+                trust.
               </p>
-              <ol>
-                <li>Be an ecowear</li>
-                <li>Sophisticated and not mass-produced</li>
-                <li>Only natural materials</li>
-              </ol>
-              <img alt={'founder'} src={'/about2.png'}></img>
+              <p>
+                The result cuts both ways. Makers struggle to reach buyers;
+                buyers assume “made in Botswana” is a slogan rather than a
+                standard. We fix the link between the two: one honest catalogue,
+                every product traced to its maker, every order confirmed by a
+                human before money moves.
+              </p>
+              <p>
+                We are not a factory, a bank or a government scheme. We are
+                operators: we check workshops, we photograph products, we route
+                orders, and we keep both sides honest. If a maker misses a
+                deadline, you hear it from us straight away — with options.
+              </p>
             </div>
-            <h3>Sustainability</h3>
-            <div id={'#sustainability'} ref={sustainabilityRef}>
+          </div>
+
+          <div className={styles.content} ref={makersRef} id={'makers'}>
+            <h3>List your workshop</h3>
+            <div>
               <p>
-                Our founder, Thomas Hill, had both an eye for quality and a
-                desire to innovate. As well as using the finest fibres such as
-                Sea Island cotton, cashmere and silk, he invented his own
-                fabrics. Sunspel continues this commitment to innovation today
-                and our unique fabrics include: Q100 Sea Island cotton, Q82
-                Supima cotton, Q75 warp knit mesh cotton and Q14 warp knit
-                cellular cotton. The technology behind these fabrics remains
-                unchanged today and all Sunspel products use the finest cottons,
-                wools and fibres.
+                We onboard apparel studios, food processors, natural-cosmetic
+                producers, leather workers and craft cooperatives. We prefer
+                makers registered with BITC’s Pride Mark or LEA — the
+                Industrial Development Act definition of “local manufacture”
+                governs what we accept. Founding
+                phase terms: no listing fee, you set your own prices and lead
+                times, we route orders to you on WhatsApp or phone, you invoice
+                through your own business.
+              </p>
+              <p>To apply, send us:</p>
+              <ul>
+                <li>Photos of your workshop and products</li>
+                <li>Your price list and typical lead times</li>
+                <li>Weekly capacity and what you can consistently supply</li>
+                <li>Business registration or cooperative details, if any</li>
+              </ul>
+              <p>
+                We visit before listing. We will tell you honestly if we think
+                the timing, quality or economics are not right yet — and what
+                would change that.
+              </p>
+              <div className={styles.ctaButtons}>
+                <Button target={true} href={makersWhatsApp} level={'primary'}>
+                  apply via WhatsApp
+                </Button>
+                <Button
+                  href={`mailto:${Config.contact.email}?subject=Maker%20application`}
+                  level={'secondary'}
+                >
+                  apply via email
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.content} ref={corporateRef} id={'corporate'}>
+            <h3>Corporate &amp; institutions</h3>
+            <div>
+              <p>
+                Team polos, event tees, site jackets, caps and gifting — cut,
+                sewn and decorated in Gaborone. Embroidery from 50 units,
+                screen printing from 20, corporate gifting boxes on request.
+                Order of work: brief → written quote (2 working days) →
+                pre-production sample → production → Botswana-wide delivery.
               </p>
               <p>
-                Made in Long Eaton, England and crafted from our luxurious long
-                staple Supima cotton for unparalleled softness, comfort and
-                durability, the Sunspel T-shirt has a classic fit and only the
-                most essential details.{' '}
+                Typical lead time is 10 working days after sample approval.
+                We supply company details, invoice and VAT documentation on
+                request. For repeat programmes, we hold your brand spec on file
+                so reorders take days, not weeks.
               </p>
+              <div className={styles.ctaButtons}>
+                <Button target={true} href={corporateWhatsApp} level={'primary'}>
+                  request a corporate quote
+                </Button>
+                <Button
+                  href={`mailto:${Config.contact.email}?subject=Corporate%20quote%20enquiry`}
+                  level={'secondary'}
+                >
+                  email your brief
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.content}>
+            <h3>What we will not do</h3>
+            <div>
               <p>
-                With over 100 years spent perfecting fabric, fit and style, the
-                Sunspel Classic T-shirt is recognised as the finest in the
-                world.
+                We do not list imported stock as “Made in Botswana”. We do not
+                take your payment before a maker confirms availability. We do
+                not invent reviews, inflate prices or hide lead times. And we
+                do not claim carbon-neutral anything — we claim shorter supply
+                chains, steadier local wages and garments that last.
               </p>
             </div>
           </div>
         </Container>
-
-        <div className={styles.imageContainer}>
-          <img alt={'shirt backwards'} src={'/about3.png'}></img>
-        </div>
+        <div className={styles.bottomSpacer} />
       </div>
     </Layout>
   );

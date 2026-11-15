@@ -1,56 +1,43 @@
 import React from 'react';
 import { isNumeric } from '../../helpers/general';
-// import * as styles from './CurrencyFormatter.module.css';
 
+/**
+ * Formats an amount in Botswana Pula (BWP) by default.
+ * locale fixed to en-BW so the "P" symbol renders identically
+ * on every device and during static build.
+ */
 const CurrencyFormatter = ({
   amount,
-  currency = 'USD',
+  currency = 'BWP',
   appendZero = false,
-  useDollar = false,
 }) => {
-  let displayAmount =
-    (typeof amount !== 'number' && parseFloat(amount?.replace('$', ''))) ||
-    amount;
-  /* Set language display */
-  const languageCode =
-    typeof window !== 'undefined'
-      ? window.navigator.language || 'en-AU'
-      : 'en-AU';
+  const parsed =
+    typeof amount === 'number'
+      ? amount
+      : parseFloat(String(amount).replace(/[^0-9.-]/g, ''));
 
-  /* Format and return */
-  // isolate currency
-  const formatObject = new Intl.NumberFormat(languageCode, {
-    style: 'currency',
-    currency,
-  });
-  let symbol = '$';
-  let formattedPrice = formatObject.format(displayAmount);
-  if ('formatToParts' in formatObject) {
-    const formattedPriceParts = formatObject.formatToParts(displayAmount);
-    if (useDollar === false) symbol = formattedPriceParts[0].value;
-    const currencyValue = formattedPriceParts.find(
-      (obj) => obj.type === 'currency'
-    );
-    const decimalValue = formattedPriceParts.find(
-      (obj) => obj.type === 'fraction'
-    );
-    formattedPrice = formattedPrice.replace(currencyValue.value, '');
-    if (decimalValue && decimalValue.value === '00' && !appendZero) {
-      formattedPrice = formattedPrice.replace(`.${decimalValue.value}`, '');
-    }
-  } else {
-    // new Intl.NumberFormat is not supported; return amount with dollar sign
-    formattedPrice = amount;
+  if (!isNumeric(parsed)) {
+    return <span>No price available</span>;
   }
 
-  const priceComponent = (
-    <>
-      <span>{symbol}</span>
-      <span>{formattedPrice}</span>
-    </>
-  );
+  const formatObject = new Intl.NumberFormat('en-BW', {
+    style: 'currency',
+    currency,
+    currencyDisplay: 'narrowSymbol',
+    minimumFractionDigits: appendZero ? 2 : 0,
+    maximumFractionDigits: appendZero ? 2 : currency === 'BWP' ? 0 : 2,
+  });
 
-  return isNumeric(amount) ? priceComponent : 'No price available';
+  let formatted = formatObject.format(parsed);
+  if (!appendZero) {
+    formatted = formatted.replace(/\.00(?=\D*$)/, '');
+  }
+
+  return (
+    <span aria-label={`Price ${formatted}`}>
+      <span>{formatted}</span>
+    </span>
+  );
 };
 
 export default CurrencyFormatter;

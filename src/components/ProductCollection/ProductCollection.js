@@ -7,8 +7,17 @@ const ProductCollection = (props) => {
 
   return (
     <div
-      role={'presentation'}
+      role={'link'}
+      tabIndex={0}
+      aria-label={`${title} — ${text || 'shop now'}`}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          navigate(link);
+        }
+      }}
       onClick={() => navigate(link)}
+      onKeyPress={() => navigate(link)}
       className={styles.root}
       style={{ backgroundImage: `url(${image})` }}
     >

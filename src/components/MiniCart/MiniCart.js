@@ -4,37 +4,53 @@ import React from 'react';
 import Button from '../Button';
 import CurrencyFormatter from '../CurrencyFormatter';
 import MiniCartItem from '../MiniCartItem';
+import { useCart } from '../../context/CartContext';
 
 import * as styles from './MiniCart.module.css';
 
 const MiniCart = (props) => {
-  const sampleCartItem = {
-    image: '/products/pdp1.jpeg',
-    alt: '',
-    name: 'Lambswool Crew Neck Jumper',
-    price: 220,
-    color: 'Anthracite Melange',
-    size: 'xs',
-  };
+  const { items, subtotal, count } = useCart();
+
+  if (items.length === 0) {
+    return (
+      <div className={styles.root}>
+        <div className={styles.titleContainer}>
+          <h4>My Bag</h4>
+        </div>
+        <div className={styles.emptyContainer}>
+          <p>Your bag is empty.</p>
+          <p className={styles.emptyHint}>
+            Browse the catalogue — every product is made in Botswana.
+          </p>
+          <Button onClick={() => navigate('/shop')} level={'primary'} fullWidth>
+            shop the collection
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.root}>
       <div className={styles.titleContainer}>
-        <h4>My Bag</h4>
+        <h4>My Bag ({count})</h4>
       </div>
       <div className={styles.cartItemsContainer}>
-        <MiniCartItem {...sampleCartItem} />
+        {items.map((item) => (
+          <MiniCartItem key={item.id} item={item} />
+        ))}
       </div>
       <div className={styles.summaryContainer}>
         <div className={styles.summaryContent}>
           <div className={styles.totalContainer}>
-            <span>Total (USD)</span>
+            <span>Subtotal (BWP)</span>
             <span>
-              <CurrencyFormatter amount={220} appendZero />
+              <CurrencyFormatter amount={subtotal} appendZero />
             </span>
           </div>
           <span className={styles.taxNotes}>
-            Taxes and shipping will be calculated at checkout
+            Collection is free. Delivery and totals are confirmed on your order
+            enquiry before payment.
           </span>
           <Button onClick={() => navigate('/cart')} level={'primary'} fullWidth>
             checkout

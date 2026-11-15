@@ -157,3 +157,20 @@
         padding-bottom: 100px;
     }
 }
+.ctaButtons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.bottomSpacer {
+    padding-bottom: 96px;
+}
+
+@media (max-width: 800px) {
+    .ctaButtons > a {
+        width: 100%;
+        text-align: center;
+    }
+}

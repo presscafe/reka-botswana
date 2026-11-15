@@ -1,27 +1,17 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React from 'react';
 
 import Accordion from '../Accordion';
 import Container from '../Container';
-import Dropdown from '../Dropdown/Dropdown';
-import FormInputField from '../FormInputField/FormInputField';
-import Icon from '../Icons/Icon';
 import Button from '../Button';
 import Config from '../../config.json';
 import * as styles from './Footer.module.css';
 
 const Footer = (prop) => {
-  const [email, setEmail] = useState('');
-
-  const subscribeHandler = (e) => {
-    e.preventDefault();
-    setEmail('');
-    console.log('Subscribe this email: ', email);
-  };
-
-  const handleSocialClick = (platform) => {
-    window.open(Config.social[platform]);
-  };
+  const { contact, paymentMethods } = Config;
+  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
+    'Hello Reka Botswana — I would like help with my order.'
+  )}`;
 
   const renderLinks = (linkCollection) => {
     return (
@@ -69,63 +59,18 @@ const Footer = (prop) => {
             })}
             <div className={styles.newsLetter}>
               <div className={styles.newsLetterContent}>
-                <span className={styles.linkTitle}>Newsletter</span>
+                <span className={styles.linkTitle}>Order & Support</span>
                 <p className={styles.promoMessage}>
-                  Get 15% off your first purchase! Plus, be the first to know
-                  about sales, new product launches and exclusive offers!
+                  Questions about an order, a maker or a corporate quote?
+                  Message us on WhatsApp — {contact.responseTime}.
                 </p>
-                <form
-                  className={styles.newsLetterForm}
-                  onSubmit={(e) => subscribeHandler(e)}
-                >
-                  <FormInputField
-                    icon={'arrow'}
-                    id={'newsLetterInput'}
-                    value={email}
-                    placeholder={'Email'}
-                    handleChange={(_, e) => setEmail(e)}
-                  />
-                </form>
-                <div className={styles.socialContainer}>
-                  {Config.social.youtube && (
-                    <div
-                      onClick={() => handleSocialClick('youtube')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'youtube'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.instagram && (
-                    <div
-                      onClick={() => handleSocialClick('instagram')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'instagram'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.facebook && (
-                    <div
-                      onClick={() => handleSocialClick('facebook')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'facebook'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.twitter && (
-                    <div
-                      onClick={() => handleSocialClick('twitter')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'twitter'}></Icon>
-                    </div>
-                  )}
+                <Button target={true} href={waLink} level={'primary'}>
+                  WhatsApp {contact.whatsappDisplay}
+                </Button>
+                <div className={styles.emailContainer}>
+                  <a href={`mailto:${contact.email}`} className={styles.emailLink}>
+                    {contact.email}
+                  </a>
                 </div>
               </div>
             </div>
@@ -136,44 +81,24 @@ const Footer = (prop) => {
         <Container size={'large'} spacing={'min'}>
           <div className={styles.contentBottom}>
             <div className={styles.settings}>
-              <Dropdown
-                label={'Country/Region'}
-                optionList={Config.currencyList}
-              />
-              <Dropdown label={'Language'} optionList={Config.languageList} />
+              <span className={styles.finePrint}>
+                Gaborone, Botswana · Prices in Pula (BWP) · English
+              </span>
             </div>
             <div className={styles.copyrightContainer}>
               <div className={styles.creditCardContainer}>
-                {Config.paymentOptions.amex && (
-                  <img
-                    className={styles.amexSize}
-                    src={'/amex.png'}
-                    alt={'amex'}
-                  ></img>
-                )}
-                {Config.paymentOptions.mastercard && (
-                  <img
-                    className={styles.masterSize}
-                    src={'/master.png'}
-                    alt={'mastercard'}
-                  ></img>
-                )}
-                {Config.paymentOptions.visa && (
-                  <img
-                    className={styles.visaSize}
-                    src={'/visa.png'}
-                    alt={'visa'}
-                  ></img>
-                )}
+                {paymentMethods.map((method) => (
+                  <span key={method} className={styles.paymentBadge}>
+                    {method}
+                  </span>
+                ))}
               </div>
               <span>
-                {new Date().getFullYear()} (c) . Built by{' '}
-                <Button target={true} href="https://www.matterdesign.com.au/">
-                  Matter.
-                </Button>{' '}
-                Powered by{' '}
-                <Button target={true} href="https://jamm.matter.design/">
-                  JAMM.™
+                © {new Date().getFullYear()} Reka Botswana. Made-in-Botswana
+                curation — makers are credited on each product page. Built on
+                the open-source Gatsby e-commerce theme by{' '}
+                <Button target={true} href="https://matterdesign.com.au/">
+                  Matter Design
                 </Button>
               </span>
             </div>

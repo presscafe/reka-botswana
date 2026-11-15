@@ -1,115 +1,494 @@
 [
-    {
-        "productCode": "MJUM8066-GYDZ",
-        "name": "Lambswool Crew Neck Jumper",
-        "vendor": "Sunspel",
-        "price": 75,
-        "alt": "lambswool crew neck jumper",
-        "image": "/products/pdp1.jpeg",
-        "colorOptions": [
-            {"color": "#000000", "title": "Anthracite Melange"},
-            {"color": "#4D34AE", "title": "Pale Purple"},
-            {"color": "#488266", "title": "Green Moss"}
-        ],
-        "sizeOptions": ["xs", "s", "m", "l", "xl"],
-        "wishlist": true,
-        "tags": ["sample"],
-        "gallery": [
-            {"image": "/products/pdp1.jpeg", "alt": "pdp description 1"},
-            {"image": "/products/pdp2.jpeg", "alt": "pdp description 2"},
-            {"image": "/products/pdp3.jpeg", "alt": "pdp description 3"},
-            {"image": "/products/pdp4.jpeg", "alt": "pdp description 4"}
-        ],
-        "description": "This soft lambswool jumper is knitted in Scotland, using yarn from one of the world's oldest spinners based in Fife. Once knitted, the garment is washed in Scottish spring water to make it beautifully soft."
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 1",
-        "image": "/products/shirt1.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 2",
-        "image": "/products/shirt2.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 3",
-        "image": "/products/shirt3.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 13.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman1.jpeg",
-        "tags": ["woman"],
-        "meta": "+ 2 colors"
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman2.jpeg",
-        "tags": ["woman"]
-    },    
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 13.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman3.jpeg",
-        "tags": ["woman"],
-        "meta": "+ 2 colors"
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman4.jpeg",
-        "tags": ["woman"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman5.jpeg",
-        "tags": ["woman"],
-        "originalPrice": 31.50
-
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 21,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman6.jpeg",
-        "tags": ["woman"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman3.jpeg",
-        "tags": ["woman"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman2.jpeg",
-        "tags": ["woman"],
-        "originalPrice": 31.50
-
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 21,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman1.jpeg",
-        "tags": ["woman"]
-    }
-  ]
+  {
+    "productCode": "RB-APP-001",
+    "slug": "reka-heritage-corporate-polo",
+    "name": "Reka Heritage Corporate Polo",
+    "vendor": "Reka Apparel Studio, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 285,
+    "alt": "Khaki short-sleeve corporate polo shirt with navy collar and buttons",
+    "image": "/products/reka-heritage-polo.jpg",
+    "colorOptions": [
+      {
+        "color": "#8a7048",
+        "title": "Khaki"
+      },
+      {
+        "color": "#1f2a44",
+        "title": "Navy"
+      },
+      {
+        "color": "#1f4e3d",
+        "title": "Bottle Green"
+      }
+    ],
+    "sizeOptions": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl"
+    ],
+    "wishlist": false,
+    "tags": [
+      "apparel",
+      "corporate",
+      "men",
+      "women"
+    ],
+    "meta": "Made to order",
+    "leadTime": "10 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-heritage-polo.jpg",
+        "alt": "Reka Heritage Corporate Polo — khaki"
+      }
+    ],
+    "description": "Short-run corporate wear cut and sewn in Gaborone. Pre-shrunk cotton-piqué, navy tipping, embroidered company logo from 50 units or printed from 20. Ask us for a corporate quote — MOQ, timelines and delivery across Botswana arranged per order."
+  },
+  {
+    "productCode": "RB-APP-002",
+    "slug": "mabele-heritage-tee",
+    "name": "Mabele Heritage Tee",
+    "vendor": "Reka Apparel Studio, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 240,
+    "alt": "Charcoal oversized unisex t-shirt with a subtle Kgalagadi geometric chest band",
+    "image": "/products/reka-heritage-tee.jpg",
+    "colorOptions": [
+      {
+        "color": "#262626",
+        "title": "Charcoal"
+      }
+    ],
+    "sizeOptions": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl"
+    ],
+    "wishlist": false,
+    "tags": [
+      "apparel",
+      "men",
+      "women"
+    ],
+    "meta": "Screen printed in Gaborone",
+    "leadTime": "3–5 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-heritage-tee.jpg",
+        "alt": "Mabele Heritage Tee — charcoal with Kgalagadi geometric band"
+      }
+    ],
+    "description": "Oversized unisex tee in heavyweight cotton with a Kgalagadi-inspired geometric chest band, screen printed in Gaborone. Soft hand-feel, pre-shrunk, made for daily wear in the Kalahari heat and beyond."
+  },
+  {
+    "productCode": "RB-PAN-003",
+    "slug": "kgalagadi-braai-blend",
+    "name": "Kgalagadi Braai Blend 100g",
+    "vendor": "Kgalagadi Gourmet, Tlokweng",
+    "origin": "Tlokweng, Botswana",
+    "madeIn": "Botswana",
+    "price": 85,
+    "alt": "Glass jar of Kalahari braai spice blend with wooden scoop",
+    "image": "/products/reka-braai-blend.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "spice"
+    ],
+    "meta": "Blended in Tlokweng",
+    "leadTime": "1–2 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-braai-blend.jpg",
+        "alt": "Kgalagadi Braai Blend — glass jar with scoop"
+      }
+    ],
+    "description": "A proudly local dry spice blend for beef, goat and chicken over the coals — paprika, coriander, garlic, coarse salt and Kalahari chilli. Blended and packed in Tlokweng. No MSG, no anti-caking agents."
+  },
+  {
+    "productCode": "RB-PAN-004",
+    "slug": "seswaa-signature-dry-rub",
+    "name": "Seswaa Signature Dry Rub 150g",
+    "vendor": "Kgalagadi Gourmet, Tlokweng",
+    "origin": "Tlokweng, Botswana",
+    "madeIn": "Botswana",
+    "price": 95,
+    "alt": "Kraft pouch of dark seswaa dry-rub seasoning with peppercorns",
+    "image": "/products/reka-seswaa-rub.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "spice"
+    ],
+    "meta": "Small-batch",
+    "leadTime": "1–2 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-seswaa-rub.jpg",
+        "alt": "Seswaa Signature Dry Rub — kraft pouch"
+      }
+    ],
+    "description": "A robust dry rub inspired by the low-and-slow seswaa tradition — smoked paprika, brown sugar, black pepper, garlic and bay. Works on beef, goat and lamb roasts. Resealable kraft pouch, small-batch."
+  },
+  {
+    "productCode": "RB-PAN-005",
+    "slug": "otse-moringa-leaf-powder",
+    "name": "Otse Moringa Leaf Powder 150g",
+    "vendor": "Otse Botanicals, Otse",
+    "origin": "Otse, Botswana",
+    "madeIn": "Botswana",
+    "price": 160,
+    "alt": "Glass jar of green moringa leaf powder with wooden spoon",
+    "image": "/products/reka-moringa.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "superfood",
+      "wellness"
+    ],
+    "meta": "Single-origin, air-dried",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-moringa.jpg",
+        "alt": "Otse Moringa Leaf Powder — jar with spoon"
+      }
+    ],
+    "description": "Single-origin moringa grown on dryland fields near Otse, shade-dried and milled in small batches to preserve colour and nutrients. Add to smoothies, porridge or stews. Food supplement — not a medicine. Consult your doctor if you are pregnant or on medication."
+  },
+  {
+    "productCode": "RB-PAN-006",
+    "slug": "kalahari-wildflower-honey",
+    "name": "Kalahari Wildflower Honey 500g",
+    "vendor": "Kang Kalahari Apiaries, Kang",
+    "origin": "Kang, Botswana",
+    "madeIn": "Botswana",
+    "price": 185,
+    "alt": "Hexagonal glass jar of raw golden honey with wooden dipper and honeycomb",
+    "image": "/products/reka-honey.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "honey"
+    ],
+    "meta": "Raw, unfiltered",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-honey.jpg",
+        "alt": "Kalahari Wildflower Honey — jar with dipper"
+      }
+    ],
+    "description": "Raw, unfiltered honey harvested from hives foraged on Kalahari summer flowers. Naturally granulates — warm gently to liquify. From smallholder apiaries in the western Kalahari; every jar is from a registered beekeeping project. Food, not medicine."
+  },
+  {
+    "productCode": "RB-BEA-007",
+    "slug": "kalahari-marula-finishing-oil",
+    "name": "Kalahari Marula Finishing Oil 100ml",
+    "vendor": "Central Kalahari Marula Coop, Serowe",
+    "origin": "Serowe, Botswana",
+    "madeIn": "Botswana",
+    "price": 230,
+    "alt": "Amber glass pump bottle of marula finishing oil",
+    "image": "/products/reka-marula-oil.jpg",
+    "tags": [
+      "beauty",
+      "wellness",
+      "skincare"
+    ],
+    "meta": "Cold-pressed, unrefined",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-marula-oil.jpg",
+        "alt": "Kalahari Marula Finishing Oil — amber pump bottle"
+      }
+    ],
+    "description": "Cold-pressed marula kernel oil from community-gathered nuts in the Central Kalahari. A light, fast-absorbing finishing oil for hair and dry skin. Patch-test before first use. 100ml amber glass pump."
+  },
+  {
+    "productCode": "RB-BEA-008",
+    "slug": "mutodi-baobab-shea-soap",
+    "name": "Kgalagadi Baobab & Shea Soap × 3",
+    "vendor": "Baobab & Co, Molepolole",
+    "origin": "Molepolole, Botswana",
+    "madeIn": "Botswana",
+    "price": 110,
+    "alt": "Three handmade baobab and shea soap bars wrapped in plain kraft paper",
+    "image": "/products/reka-baobab-soap.jpg",
+    "tags": [
+      "beauty",
+      "wellness",
+      "soap"
+    ],
+    "meta": "Handmade, unscented",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-baobab-soap.jpg",
+        "alt": "Kgalagadi Baobab & Shea Soap — three kraft-wrapped bars"
+      }
+    ],
+    "description": "Handmade triple-milled soap bars with baobab fruit powder and shea butter — no synthetic fragrance, no palm oil. Gentle on sensitive skin. Set of three, cut and cured in Molepolole."
+  },
+  {
+    "productCode": "RB-HOM-009",
+    "slug": "phane-harvest-handwoven-basket",
+    "name": "Phane Harvest Handwoven Basket",
+    "vendor": "Etsha Weavers Cooperative",
+    "origin": "Etsha, Okavango Panhandle",
+    "madeIn": "Botswana",
+    "price": 1850,
+    "alt": "Handwoven phane palm basket with geometric beige and brown pattern",
+    "image": "/products/reka-phane-basket.jpg",
+    "tags": [
+      "home",
+      "craft",
+      "gift"
+    ],
+    "meta": "One of a kind",
+    "leadTime": "2–6 weeks (one of a kind)",
+    "gallery": [
+      {
+        "image": "/products/reka-phane-basket.jpg",
+        "alt": "Phane Harvest Basket — geometric beige and brown weave"
+      }
+    ],
+    "description": "Palm-fibre, handwoven by weavers of the Etsha villages in the Okavango Panhandle, in the coil tradition refined for winnowing mopane-worm (phane) harvests. Each basket is unique — pattern and tone vary with the season's palm and dye. Photographed on completion and collected in Gaborone or couriered nationwide."
+  },
+  {
+    "productCode": "RB-PAN-010",
+    "slug": "morama-crunch-energy-bars",
+    "name": "Morama Crunch Energy Bars × 6",
+    "vendor": "Letlhakeng Foods, Letlhakeng",
+    "origin": "Letlhakeng, Botswana",
+    "madeIn": "Botswana",
+    "price": 150,
+    "alt": "Box of six morama nut and oat energy bars",
+    "image": "/products/reka-morama-bars.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "snack",
+      "superfood"
+    ],
+    "meta": "Morama nut + oats",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-morama-bars.jpg",
+        "alt": "Morama Crunch Energy Bars — box of six"
+      }
+    ],
+    "description": "Botswana's under-used morama nut (Tylosema esculentum) roasted and folded into oat and date energy bars. High in protein and minerals, dairy-free, no refined sugar. Box of six wrapped bars, best within 3 months."
+  },
+  {
+    "productCode": "RB-ACC-011",
+    "slug": "mokoro-handmade-leather-belt",
+    "name": "Mokoro Handmade Leather Belt",
+    "vendor": "Tlokweng Leather Works, Tlokweng",
+    "origin": "Tlokweng, Botswana",
+    "madeIn": "Botswana",
+    "price": 450,
+    "alt": "Handmade full-grain leather belt with brass buckle",
+    "image": "/products/reka-leather-belt.jpg",
+    "colorOptions": [
+      {
+        "color": "#4a2f1d",
+        "title": "Tan"
+      },
+      {
+        "color": "#1c1c1c",
+        "title": "Black"
+      }
+    ],
+    "sizeOptions": [
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "wishlist": false,
+    "tags": [
+      "accessories",
+      "men",
+      "women",
+      "leather"
+    ],
+    "meta": "Full-grain leather",
+    "leadTime": "5–7 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-leather-belt.jpg",
+        "alt": "Mokoro Leather Belt — tan full-grain with brass buckle"
+      }
+    ],
+    "description": "Full-grain leather, hand-cut and burnished in Tlokweng with a solid brass buckle. 32mm width, fits belt sizes 30–42. Punched to your waist — mention your exact size at checkout or in WhatsApp order notes."
+  },
+  {
+    "productCode": "RB-GIF-012",
+    "slug": "reka-taste-of-botswana-gift-box",
+    "name": "Reka Gift Box — Taste of Botswana",
+    "vendor": "Reka Botswana Curations, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 520,
+    "originalPrice": 620,
+    "alt": "Curated gift box with honey, braai spice, morama bars and baobab soap",
+    "image": "/products/reka-gift-box.jpg",
+    "tags": [
+      "gift",
+      "food",
+      "beauty",
+      "bundle"
+    ],
+    "meta": "Curated bundle",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-gift-box.jpg",
+        "alt": "Reka Taste of Botswana gift box — honey, spices, bars and soap"
+      }
+    ],
+    "description": "A curated introduction to the pantry: Kalahari Wildflower Honey 500g + Kgalagadi Braai Blend + Morama Crunch Bars ×6 + Kgalagadi Baobab & Shea Soap ×3, wrapped in recycled kraft with a handwritten note. Corporate gifting available in volumes — ask for a quote."
+  },
+  {
+    "productCode": "RB-PAN-013",
+    "slug": "kgalagadi-phane-bites-80g",
+    "name": "Kgalagadi Phane Bites 80g",
+    "vendor": "Tonota Phane Foods, Tonota",
+    "origin": "Tonota, Botswana",
+    "madeIn": "Botswana",
+    "price": 55,
+    "alt": "Kraft snack pouch of spiced phane bites with a bowl of the snack beside it",
+    "image": "/products/reka-phane-bites.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "snack",
+      "phane"
+    ],
+    "meta": "Ready to eat",
+    "leadTime": "1–3 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-phane-bites.jpg",
+        "alt": "Kgalagadi Phane Bites — pouch with bowl of snack"
+      }
+    ],
+    "description": "Crunchy mopane-worm (phane) bites, lightly spiced — an indigenous Botswana snack rich in protein. Mopane harvest is regional and seasonal; origin is declared per batch on request. 80g pouch, airtight resealable."
+  },
+  {
+    "productCode": "RB-PAN-014",
+    "slug": "kalahari-morula-milk-chocolate-80g",
+    "name": "Kalahari Morula Milk Chocolate 80g",
+    "vendor": "Mokolwane Chocolatiers, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 38,
+    "alt": "Milk chocolate bar with morula kernels, one piece broken off",
+    "image": "/products/reka-morula-chocolate.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "sweet",
+      "gift"
+    ],
+    "meta": "Roasted morula kernels",
+    "leadTime": "1–3 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-morula-chocolate.jpg",
+        "alt": "Kalahari Morula Milk Chocolate — bar with kernels"
+      }
+    ],
+    "description": "Smooth milk chocolate with roasted morula kernels — an indigenous southern African pairing, hand-poured in Gaborone. Best enjoyed in cool rooms (chocolate and Kalahari summers are not friends)."
+  },
+  {
+    "productCode": "RB-PAN-015",
+    "slug": "pula-kitchen-sorghum-choc-chip-cookies-210g",
+    "name": "Pula Kitchen Sorghum Choc-Chip Cookies 210g",
+    "vendor": "Pula Sorghum Kitchen, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 45,
+    "alt": "Kraft box of chocolate-chip cookies made with sorghum flour",
+    "image": "/products/reka-sorghum-cookies.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "snack"
+    ],
+    "meta": "Sorghum flour",
+    "leadTime": "1–3 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-sorghum-cookies.jpg",
+        "alt": "Pula Kitchen sorghum choc-chip cookies — box with cookies"
+      }
+    ],
+    "description": "Chocolate-chip cookies baked with sorghum flour alongside wheat — a nod to Botswana's own staple grain. 210g pack, baked weekly in Gaborone. Contains wheat, milk, soy."
+  },
+  {
+    "productCode": "RB-PAN-016",
+    "slug": "kgalagadi-sliced-biltong-250g",
+    "name": "Kgalagadi Sliced Biltong 250g",
+    "vendor": "Gaborone Biltong Works, Gaborone",
+    "origin": "Gaborone, Botswana",
+    "madeIn": "Botswana",
+    "price": 145,
+    "alt": "Kraft bag of sliced beef biltong with slices fanned out",
+    "image": "/products/reka-biltong.jpg",
+    "tags": [
+      "food",
+      "pantry",
+      "meat",
+      "snack"
+    ],
+    "meta": "Silverside beef, air-dried",
+    "leadTime": "2–4 working days",
+    "gallery": [
+      {
+        "image": "/products/reka-biltong.jpg",
+        "alt": "Kgalagadi Sliced Biltong — bag with fanned slices"
+      }
+    ],
+    "description": "Sliced biltong from silverside beef — coriander, vinegar and black pepper, air-dried in Gaborone. Medium-moist slices. Best within a week of opening; store cool and dry."
+  },
+  {
+    "productCode": "RB-HOM-017",
+    "slug": "kgatleng-looms-chevron-cushion",
+    "name": "Kgatleng Looms Chevron Wool Cushion Cover",
+    "vendor": "Kgatleng Looms, Oodi",
+    "origin": "Oodi, Botswana",
+    "madeIn": "Botswana",
+    "price": 1150,
+    "alt": "Handwoven wool cushion cover with rust, cream and charcoal chevron pattern",
+    "image": "/products/reka-oodi-cushion.jpg",
+    "tags": [
+      "home",
+      "craft",
+      "gift"
+    ],
+    "meta": "Hand-woven wool",
+    "leadTime": "2–4 weeks (hand-woven)",
+    "gallery": [
+      {
+        "image": "/products/reka-oodi-cushion.jpg",
+        "alt": "Kgatleng Looms Chevron Cushion — rust, cream and charcoal"
+      }
+    ],
+    "description": "Hand-woven on a vertical loom in Oodi from hand-spun wool, in the Chevron pattern — rust, cream and charcoal. One weaver, several days, one cover. Each piece is one of a kind; photographed on completion. Hidden zip, fits a 45×45 cm inner."
+  }
+]

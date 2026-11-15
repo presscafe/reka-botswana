@@ -129,3 +129,11 @@
     height: 20px;
 }
 
+
+.finePrint {
+    margin: 12px 24px 8px;
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--grey-placeholder);
+    text-transform: none;
+}

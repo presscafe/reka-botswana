@@ -18,3 +18,13 @@
     font-size: 14px;
     line-height: 17px;
 }
+.emptyState {
+    text-align: center;
+    padding: 64px 24px;
+    border: 1px dashed var(--grey-one);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}

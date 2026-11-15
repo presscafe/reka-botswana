@@ -1,176 +1,71 @@
 {
-  "currencyList": [
-    { "value": "AUS", "label": "Australia (AUS $)" },
-    { "value": "CAD", "label": "Canada (CAD $)" },
-    { "value": "USD", "label": "United States (US $)" },
-    { "value": "EUR", "label": "Germany (EUR €)" },
-    { "value": "HKD", "label": "Hong Kong (HKD $)" }
-  ],
-  "languageList": [
-    { "value": "english", "label": "English" },
-    { "value": "german", "label": "Deutsch" },
-    { "value": "mandarin", "label": "普通话" }
-  ],
-  "social": {
-    "facebook": "https://www.facebook.com/MatterDesign/",
-    "instagram": "https://www.instagram.com/p/CVwMlChIWmW",
-    "twitter": "https://twitter.com/hellomatter",
-    "youtube": "https://www.youtube.com/channel/UCEOu94Haa--QmltsSawflXg"
+  "contact": {
+    "whatsapp": "26772000000",
+    "whatsappDisplay": "+267 72 000 000",
+    "email": "hello@rekabotswana.co.bw",
+    "responseTime": "within one working day (Mon–Sat)",
+    "collectionPoint": "Gaborone — collection point confirmed per order",
+    "note": "PLACEHOLDER CONTACTS: replace contact.whatsapp, contact.whatsappDisplay and contact.email with the live business channels before public launch. See docs/decisions.md."
   },
-  "paymentOptions": {
-    "visa": true,
-    "mastercard": true,
-    "amex": true
+  "ordering": {
+    "collectionLabel": "Collect in Gaborone — free",
+    "gaboroneDeliveryLabel": "Gaborone delivery (1–3 working days)",
+    "gaboroneDeliveryFee": 35,
+    "nationalCourierLabel": "Botswana-wide courier (2–5 working days)",
+    "nationalCourierFee": 80,
+    "handmadeNotice": "Handmade and made-to-order items carry a maker lead time shown on each product page — confirmed before payment."
   },
+  "paymentMethods": [
+    "Orange Money",
+    "MyZaka (Mascom)",
+    "Smega (BTC)",
+    "Bank transfer",
+    "Cash on collection"
+  ],
+  "currencyList": [{ "value": "BWP", "label": "Botswana (P)" }],
+  "languageList": [{ "value": "english", "label": "English — Botswana" }],
   "footerLinks": [
     {
-      "subTitle": "Info",
+      "subTitle": "Company",
       "links": [
-        {
-          "text": "About Us",
-          "link": "/about"
-        },
-        {
-          "text": "Journal",
-          "link": "/blog"
-        },
-        {
-          "text": "Privacy Policy",
-          "link": "/support#policy"
-        }
+        { "text": "About Reka Botswana", "link": "/about" },
+        { "text": "Journal", "link": "/journal" },
+        { "text": "List your workshop", "link": "/about#makers" },
+        { "text": "Support & Policies", "link": "/support" }
       ]
     },
     {
-      "subTitle": "Support",
+      "subTitle": "Customer Care",
       "links": [
-        {
-          "text": "FAQ",
-          "link": "/faq"
-        },
-        {
-          "text": "Contact Us",
-          "link": "/support#contact"
-        },
-        {
-          "text": "Shipping & Returns",
-          "link": "/support#returns"
-        },
-        {
-          "text": "How to use this theme",
-          "link": "/how-to-use"
-        }
+        { "text": "FAQ", "link": "/faq" },
+        { "text": "Contact us", "link": "/support#contact" },
+        { "text": "Shipping & Returns", "link": "/support#returns" },
+        { "text": "Privacy", "link": "/support#policy" }
       ]
     }
   ],
   "headerLinks": [
-    {
-      "menuLabel": "Shop",
-      "menuLink": "/shop",
-      "category": [
-        {
-          "categoryLabel": "woman",
-          "submenu": [
-            {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "men",
-          "submenu": [
-            {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "pants",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "accessories",
-          "submenu": [
-            {
-              "menuLabel": "caps & scarves",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "bags",
-              "menuLink": "/shop"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "menuLabel": "journal",
-      "menuLink": "/blog",
-      "category": null
-    },
-    {
-      "menuLabel": "About",
-      "menuLink": "/about",
-      "category": null
-    }
+    { "menuLabel": "Shop", "menuLink": "/shop", "category": null },
+    { "menuLabel": "Journal", "menuLink": "/journal", "category": null },
+    { "menuLabel": "About", "menuLink": "/about", "category": null }
   ],
   "filters": [
     {
-      "category": "colour",
+      "category": "category",
       "items": [
-        { "name": "Black", "value": true },
-        { "name": "Green", "value": false },
-        { "name": "Dark Blue", "value": false },
-        { "name": "Blue", "value": true },
-        { "name": "Grey", "value": false },
-        { "name": "Red", "value": false }
-      ]
-    },
-
-    {
-      "category": "size",
-      "items": [
-        { "name": "XXS", "value": false },
-        { "name": "XS", "value": false },
-        { "name": "S", "value": false },
-        { "name": "M", "value": false },
-        { "name": "L", "value": false },
-        { "name": "XL", "value": false },
-        { "name": "XXL", "value": false },
-        { "name": "Onesize", "value": false }
+        { "name": "Apparel & Corporate Wear", "value": "apparel" },
+        { "name": "Pantry & Natural Food", "value": "pantry" },
+        { "name": "Beauty & Wellness", "value": "beauty" },
+        { "name": "Home & Craft", "value": "home" },
+        { "name": "Accessories", "value": "accessories" },
+        { "name": "Gifts", "value": "gift" }
       ]
     },
     {
-      "category": "gender",
+      "category": "availability",
       "items": [
-        { "name": "Male", "value": false },
-        { "name": "Female", "value": false },
-        { "name": "Unisex", "value": false }
+        { "name": "Ready to ship", "value": "ready" },
+        { "name": "Made to order", "value": "made-to-order" }
       ]
     }
   ]

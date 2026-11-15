@@ -1,4 +1,6 @@
 .root {
+    border: none;
+    padding: 0;
     width: 22px;
     height: 22px;
     background-color: var(--bg-close-icon);

@@ -11,14 +11,14 @@ import ProductCardGrid from '../components/ProductCardGrid';
 import Quote from '../components/Quote';
 import Title from '../components/Title';
 
-import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
+import { getJournal, getProducts } from '../helpers/catalog';
 
 import * as styles from './index.module.css';
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const IndexPage = () => {
-  const newArrivals = generateMockProductData(3, 'shirt');
-  const blogData = generateMockBlogData(3);
+  const newArrivals = getProducts({ limit: 3 });
+  const journalTeasers = getJournal(3);
 
   const goToShop = () => {
     navigate('/shop');
@@ -28,30 +28,33 @@ const IndexPage = () => {
     <Layout disablePaddingBottom>
       {/* Hero Container */}
       <Hero
-        maxWidth={'500px'}
-        image={'/banner1.png'}
-        title={'Essentials for a cold winter'}
-        subtitle={'Discover Autumn Winter 2021'}
-        ctaText={'shop now'}
+        maxWidth={'560px'}
+        image={'/banner1.jpg'}
+        title={'Proudly Made in Botswana'}
+        subtitle={
+          'Clothing, pantry, beauty and craft — made by real workshops across Botswana. Free collection, pay by Orange Money, MyZaka, bank transfer or cash.'
+        }
+        ctaText={'shop the collection'}
         ctaAction={goToShop}
       />
 
       {/* Message Container */}
       <div className={styles.messageContainer}>
         <p>
-          This is a demonstration of the Sydney theme for verse by{' '}
-          <span className={styles.gold}>matter design.</span>
+          Every pula spent on Botswana-made goods keeps{' '}
+          <span className={styles.gold}>wages, skills and suppliers</span> inside
+          the country.
         </p>
         <p>
-          wear by <span className={styles.gold}>sunspel</span> and{' '}
-          <span className={styles.gold}>scotch&soda</span>
+          designed, grown &amp; sewn at home —{' '}
+          <span className={styles.gold}>buy it here first</span>
         </p>
       </div>
 
       {/* Collection Container */}
       <div className={styles.collectionContainer}>
         <Container size={'large'}>
-          <Title name={'New Collection'} />
+          <Title name={'Shop by Category'} />
           <ProductCollectionGrid />
         </Container>
       </div>
@@ -59,7 +62,7 @@ const IndexPage = () => {
       {/* New Arrivals */}
       <div className={styles.newArrivalsContainer}>
         <Container>
-          <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
+          <Title name={'Fresh off the floor'} link={'/shop'} textLink={'view all'} />
           <ProductCardGrid
             spacing={true}
             showSlider
@@ -74,69 +77,85 @@ const IndexPage = () => {
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/highlight.png'}
-            altImage={'highlight image'}
-            miniImage={'/highlightmin.png'}
-            miniImageAlt={'mini highlight image'}
-            title={'Luxury Knitwear'}
-            description={`This soft lambswool jumper is knitted in Scotland, using yarn from one of the world's oldest spinners based in Fife`}
-            textLink={'shop now'}
-            link={'/shop'}
+            image={'/highlight.jpg'}
+            altImage={'Hands weaving a phane palm basket'}
+            miniImage={'/highlightmin.jpg'}
+            miniImageAlt={'Finished phane harvest basket'}
+            title={'The basket still has a job to do'}
+            description={`For generations, coil baskets winnowed phane harvests across northern Botswana. We work directly with weaver cooperatives so the maker sets the price — and you get the real thing.`}
+            textLink={'list your own workshop'}
+            link={'/about#makers'}
           />
         </Container>
       </div>
 
-      {/* Promotion */}
+      {/* Corporate wear band */}
       <div className={styles.promotionContainer}>
-        <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
-        <div className={styles.linkContainers}>
-          <Link to={'/shop'}>WOMAN</Link>
-          <Link to={'/shop'}>MAN</Link>
+        <Hero
+          image={'/banner2.jpg'}
+          title={'Corporate wear, sewn in Gaborone'}
+        />
+        <div className={styles.corporateContainer}>
+          <p>
+            Short-run embroidered or printed programmes — polos, tees, caps —
+            from 20 units. Written quote within two working days.
+          </p>
+          <button
+            type={'button'}
+            className={styles.corporateButton}
+            onClick={() => navigate('/about#corporate')}
+          >
+            Request a corporate quote
+          </button>
         </div>
       </div>
 
       {/* Quote */}
       <Quote
         bgColor={'var(--standard-light-grey)'}
-        title={'about Sydney'}
+        title={'our promise'}
         quote={
-          '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
+          '“We only list what is genuinely designed, grown or made in Botswana — and we tell you exactly who made it.”'
         }
       />
 
-      {/* Blog Grid */}
+      {/* Journal Grid */}
       <div className={styles.blogsContainer}>
         <Container size={'large'}>
-          <Title name={'Journal'} subtitle={'Notes on life and style'} />
-          <BlogPreviewGrid data={blogData} />
+          <Title
+            name={'The Journal'}
+            subtitle={'Notes on Botswana-made quality'}
+          />
+          <BlogPreviewGrid data={journalTeasers} />
         </Container>
       </div>
 
-      {/* Promotion */}
+      {/* Sustainable band */}
       <div className={styles.sustainableContainer}>
         <Hero
-          image={'/banner3.png'}
-          title={'We are Sustainable'}
+          image={'/banner3.jpg'}
+          title={'Demand-led, made locally'}
           subtitle={
-            'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'
+            'Short production runs cut waste, keep workshops busy and keep skills in the community — from Otse to Etsha.'
           }
-          ctaText={'read more'}
+          ctaLink={'read the journal'}
+          ctaTo={'/journal'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
         />
       </div>
 
-      {/* Social Media */}
+      {/* Community grid */}
       <div className={styles.socialContainer}>
         <Title
-          name={'Styled by You'}
-          subtitle={'Tag @sydney to be featured.'}
+          name={'Made by Botswana hands'}
+          subtitle={'From garment workshops in Gaborone to weaver cooperatives in the north.'}
         />
         <div className={styles.socialContentGrid}>
-          <img src={`/social/socialMedia1.png`} alt={'social media 1'} />
-          <img src={`/social/socialMedia2.png`} alt={'social media 2'} />
-          <img src={`/social/socialMedia3.png`} alt={'social media 3'} />
-          <img src={`/social/socialMedia4.png`} alt={'social media 4'} />
+          <img src={`/products/reka-heritage-polo.jpg`} alt={'Corporate polo made in Gaborone'} />
+          <img src={`/products/reka-braai-blend.jpg`} alt={'Kgalagadi Braai Blend blended in Tlokweng'} />
+          <img src={`/highlight.jpg`} alt={'Weaver hands finishing a phane basket'} />
+          <img src={`/banner3.jpg`} alt={'Dryland moringa fields near Otse'} />
         </div>
       </div>
       <AttributeGrid />

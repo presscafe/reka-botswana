@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-/**
- *
- Font weight references:
-
- Regular: 400;
- Medium: 500;
- Semi-bold: 600;
- Bold: 700;
- Extra-bold: 800;
- *
- */
+/* Fonts are self-hosted via @fontsource (no third-party font requests at runtime).
+   Imported with a relative path: this Gatsby 4 / enhanced-resolve 5.9 stack cannot
+   resolve @fontsource's pattern subpath exports (e.g. '@fontsource/inter/600.css').
+   Webpack content-hashes the woff2 files into /static/ for far-future caching. */
+@import '../../../node_modules/@fontsource/inria-serif/300.css';
+@import '../../../node_modules/@fontsource/inria-serif/400.css';
+@import '../../../node_modules/@fontsource/inria-serif/400-italic.css';
+@import '../../../node_modules/@fontsource/inria-serif/700.css';
+@import '../../../node_modules/@fontsource/inter/300.css';
+@import '../../../node_modules/@fontsource/inter/400.css';
+@import '../../../node_modules/@fontsource/inter/500.css';
+@import '../../../node_modules/@fontsource/inter/600.css';
+@import '../../../node_modules/@fontsource/inter/700.css';
+@import '../../../node_modules/@fontsource/yeseva-one/400.css';
 
 /* Variables */
 :root {
@@ -34,7 +34,7 @@
   --standard-white: #ffffff;
   --standard-grey: #e2e2e2;
   --standard-dark-grey: #545250;
-  --standard-light-grey: #FCFAF6;
+  --standard-light-grey: #FAF7F0;
   --grey-passthough: #979797;
   --grey-border: #A9A9A8;
   --grey-placeholder: #716868;
@@ -46,8 +46,8 @@
   --bg-dark: #383634;
   --bg-close-icon: #E9E7E3;
   --bg-light-gray: #e5e5e5;
-  --standard-gold: #B59F66;
-  --sale: #902F15;
+  --standard-gold: #A85B1E;
+  --sale: #A8321E;
   --error: #9A3515;
 
   /* not sure if we are to maintain existing color palletes. better if we keep it lightweight? */

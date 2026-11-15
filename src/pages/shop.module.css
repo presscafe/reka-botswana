@@ -121,3 +121,61 @@
         display: none;
     }
 }
+
+.sortContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sortLabel {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--grey-placeholder);
+}
+
+.sortSelect {
+    border: 1px solid var(--grey-one);
+    background: var(--standard-white);
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--standard-black);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filterChip {
+    border: 1px solid var(--grey-one);
+    background: var(--standard-white);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0 8px 8px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.filterChip:hover {
+    border-color: var(--standard-gold);
+    color: var(--standard-gold);
+}
+
+.filterChipActive,
+.filterChipActive:hover {
+    background: var(--standard-black);
+    border-color: var(--standard-black);
+    color: var(--standard-white);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 64px 24px;
+    border: 1px dashed var(--grey-one);
+    border-radius: 8px;
+}
+
+.emptyState h3 {
+    font-family: var(--standard-header);
+    font-weight: 400;
+}

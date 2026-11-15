@@ -29,19 +29,19 @@ const SupportPage = (props) => {
         tempElement = <Contact />;
         break;
       case 'policy':
-        tempElement = <Policy />;
+        tempElement = <Policy variant={'privacy'} />;
         break;
       case 'shipping':
-        tempElement = <Policy />;
+        tempElement = <Policy variant={'shipping'} />;
         break;
       case 'returns':
-        tempElement = <Policy />;
+        tempElement = <Policy variant={'returns'} />;
         break;
       case 'payments':
-        tempElement = <Policy />;
+        tempElement = <Policy variant={'payments'} />;
         break;
       case 'terms':
-        tempElement = <Policy />;
+        tempElement = <Policy variant={'terms'} />;
         break;
       default:
         break;
@@ -57,7 +57,7 @@ const SupportPage = (props) => {
     if (props.location.hash !== '' && props.location.hash !== undefined) {
       const hash = props.location.hash.substring(1);
       const tempCurrent = subpages.filter((detail) => detail.key === hash)[0];
-      if (tempCurrent.key !== current.key) {
+      if (tempCurrent && tempCurrent.key !== current.key) {
         setCurrent(tempCurrent);
         window.scrollTo(0, 475);
       }
@@ -72,7 +72,7 @@ const SupportPage = (props) => {
         <Banner
           maxWidth={'650px'}
           name={current.title}
-          bgImage={'/support.png'}
+          bgImage={'/banner1.jpg'}
           color={'var(--standard-white)'}
           height={'350px'}
         />

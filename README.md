@@ -1,213 +1,97 @@
-![Gatsby E-commerce theme designed by Matter](https://user-images.githubusercontent.com/43764894/223762927-2e463570-b09a-4d51-ab81-2e0fa8aa2c70.png)
+# Reka Botswana
 
-This beautiful theme from the [Matter Design Team](https://matterdesign.com.au/) gives you the styling and scaffolding for your next e-commerce site. You can customize to your heart's content and add the tooling for cart, transactions, product, and more. This theme uses:
+The home of verified Made-in-Botswana quality. Browse clothing, pantry, beauty
+and craft from Botswana workshops, order on WhatsApp or email, and pay only
+after the maker confirms availability — Orange Money, MyZaka, Smega, bank
+transfer or cash on collection.
 
-- [Gatsby](https://www.gatsbyjs.com/)
-- [CSS Modules](https://github.com/css-modules/css-modules)
-- [Prettier](https://prettier.io/)
-- [React Helmet](https://github.com/nfl/react-helmet)
+**Status: founding build (demo catalogue).** Catalogue makers, prices, lead
+times and imagery are illustrative and researched against the real
+Made-in-Botswana landscape (see
+[`docs/research-botswana-made-portfolio.md`](docs/research-botswana-made-portfolio.md)).
+Nothing named on a product page is a contracted supplier yet.
 
-Take a look at the screenshot below or preview the live site here: https://gatsby-ecommerce-theme.netlify.app/!
-![full page screenshot](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653371030/CleanShot_2022-05-24_at_01.11.52_2x_bspa8c.jpg)
-
-> 🧐 Please be aware that some aspects of this theme are not fully functional and will need to be integrated with the recommended tooling mentioned at the end of the [README](#next-steps-with-this-theme). 
-
-## Table of Contents:
-
-- [Quick Steps + Deploy Options](#quick-setup--deploy-option)
-  - [Cloning + Installing Packages](#cloning--installing-packages)
-- [Deploying](#deploying)
-- [Project Structure](#project-structure)
-  - [Making Changes to the Hero Component](#making-changes-to-the-hero-component)
-  - [Making Changes to the Header or Footer](#making-content-changes-to-the-header-or-footer)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-- [Next Steps with This Theme](#next-steps-with-this-theme)
-
-## Quick Setup + Deploy Option
-
-Click the button below and it will help you create a new repo, create a new Netlify project, and deploy this Theme!
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
-
-## Regular Setup
-
- ### Cloning + Installing Packages
- 
-  - Clone this repo with one of these options:
-
-    - Click the 'Use this template' button at the top of the page
-    - Via the command line:
-       ```shell
-       git clone https://github.com/netlify-templates/gatsby-ecommerce-theme/
-       ```
-    - Or you can clone the theme straight from the Netlify CLI, using the `netlify sites:create-template` command in your terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)) to do the entire flow for you.
-
-  From there, you can install the project's dependencies by running:
-
-  ```shell
-  npm install or yarn install
-  ```
-
-  Finally, you can run your project locally with:
-
-  ```shell
-  cd gatsby-sydney-ecommerce-theme/
-  npm start or yarn start
-  ```
-  
-  or, run it using the Netlify CLI with:
-  
-  ```shell
-  netlify run dev
-  ```
-  
-  Open your browser and visit <http://localhost:5000>, your project should now be running!
-  
-  ## Deploying
- 
-  After installing and customizing your new e-commerce theme it's now time to deploy! 
-  
-   -  You can Deploy using the [Netlify CLI](https://cli.netlify.com/):
-
-      ```bash
-      netlify init # initialize a new Netlify project & deploy
-      ```
-
-   It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `gatsby build` to create a static project and locate the build project in the `public` directory.
-
-   The `init` process will also set up continuous deployment for your project so that a new build will be triggered & deployed when you push code to the repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
-
-   You can also use `netlify deploy (--prod)` to manually deploy and `netlify open` to open your project dashboard.
-
-  > 💡 we only have so many keystrokes to give, use `ntl` shorthand for `netlify` or make [an alias of your own](https://www.netlify.com/blog/2020/04/12/speed-up-productivity-with-terminal-aliases/) to save hours...of accumulated milliseconds
-
-  - You can deploy within the Netlify site by connecting to git, this [video](https://www.youtube.com/watch?v=4h8B080Mv4U&t=107s) will walk you through that process. 
-  - Or, you can use the Deploy to Netlify button which will walk you through the process of spinning up a repo, creating a new project in Netlify, AND deploying it :)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
-
-## Project Structure
-
-Here is a bit of an overview of the directory structure of the project:
-
-| Directory | Description |
-| :---- | :---- |
-| `src/components/` | Stores reusable elements across the site. (e.g. BlogPreview element) |
-| `src/pages/` | Stores routes for a user to go to based on each `.js` file and nested folder (e.g. `src/pages/about.js` creates a route `/about` in the web app) |
-| `src/helpers` | Stores mock data for the blog or product list and general utility functions. |
-
-### Making changes to the Hero component
-
-On the homepage of the website and a few other places, there is a full-width image component. We refer to this as the `<Hero/>` component. Here is a bit of an overview of what its API looks like:
-
-```jsx
-<Hero
-  maxWidth='500px' // how big the image's maxumim should be
-  image={'/banner1.png'} // the source location for the image
-  title={'Essentials for a cold winter'} // the main text displayed
-  subtitle={'Discover Autumn Winter 2021'} // text found below the main text
-  ctaText={'shop now'} // the presented text for a user to click on
-  ctaAction={goToShop} // the location the call-to-action text directs users
-/>
-```
-
-You can see it in action under [`src/pages/index.js`](./src/pages/index.js) or see the component in [`src/components/Hero/Hero.js`](./src/components/Hero/Hero.js).
-
-### Making content changes to the Header or Footer
-
-The project contains a file named `src/config.json`. Inside of this file describes the content of the header links (`headerLinks`) as well as the footer links (`footerLinks`). For the header, each element in the array has a base structure of:
-
-```json
-{
-  "menuLabel": "The label that is given to a user",
-  "menuLink": "The URL that this should take a user to"
-}
-```
-
-If you want the menu item to have a dropdown, you can also add a `category` key with the value being an array of the categories and their containing elements, here's what the base could look like:
-
-```json
-{
-  "menuLabel": "The label that is given to a user",
-  "menuLink": "The URL that this should take a user to",
-  "category": [
-    {
-      "categoryLabel": "Label you want the category to have",
-      "submenu": [
-        {
-          "menuLabel": "A label underneath the category",
-          "menuLink": "The associated link to this label"
-        }
-      ]
-    }
-  ]
-}
-```
-
-The footer works in a similar way. It assumes each element in the array has a heading and an array of associated links to direct folks to:
-
-```json
-"footerLinks": [
-    {
-      "subTitle": "Label of the column in the footer",
-      "links": [
-        {
-          "text": "Text to display to the user",
-          "link": "URL of where to take the user to when clicked"
-        },
-      ]
-    }
-]
-```
-
-## Testing
-
-### Included Default Testing
-
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
-
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
-
-If your team is not interested in this tooling, you can remove them with ease!
-
-### Removing Renovate
-
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
-
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-
-```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
--  [plugins.inputs]
--    enable = false
-```
-
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
+## Quick start
 
 ```bash
-npm uninstall -D netlify-plugin-cypress
+npm install          # node >= 18
+npm run develop      # http://localhost:8000
+npm run build        # production build → public/
+npm run serve        # serve the production build on :5000
 ```
 
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
+## What this is
+
+A static Progressive Web App (Gatsby 4, React 18) for the Reka Botswana
+marketplace:
+
+- **Catalogue** — 17 products across Apparel & Corporate Wear, Pantry & Natural
+  Food, Beauty & Wellness, Home & Craft, Accessories and Gifts, with per-maker
+  origin, lead time and pricing in Botswana Pula.
+- **Ordering** — no online payment by design. Checkout builds an order enquiry
+  that opens on WhatsApp or email; the maker confirms availability and the
+  final total before any money moves.
+- **PWA** — installable (`static/site.webmanifest`), offline-capable
+  (`static/sw.js`, registered in production only), security headers via
+  `netlify.toml` / `static/_headers`, `static/_redirects` for retired routes.
+- **Self-hosted fonts** (@fontsource) — zero third-party runtime requests.
+
+## Project layout
+
+| Path | Purpose |
+|---|---|
+| `src/pages/` | Routes (home, shop, search, cart, order-confirmation, faq, support, about, journal/, 404) |
+| `src/templates/` | `product.js` (PDP) and `journalArticle.js` — built per item at build time |
+| `src/components/` | Reusable UI (Header/Footer/Hero/Button/…) |
+| `src/helpers/product.json` | The catalogue (17 SKUs) — **illustrative, researched** |
+| `src/helpers/blog.json` | Journal articles (4, dated) |
+| `src/helpers/catalog.js` | Access layer (getProducts, getProductBySlug, searchProducts, …) |
+| `src/context/CartContext.js` | Cart state (localStorage), `useCart()` |
+| `src/config.json` | Brand, contact, ordering fees/labels, payment methods, nav, filters |
+| `docs/` | Research, decisions, this README's supporting material |
+| `vendor/gatsby-sharp-stub/` | Native libvips replacement required for this build environment (exact 0.19.0) |
+
+## Honest limitations (read before claiming this is finished)
+
+1. **Illustrative catalogue.** Makers shown (e.g. “Reka Apparel Studio”,
+   “Etsha Weavers Cooperative”) are fictional stand-ins — priced and
+   located against the real market (see research doc §4) but not contracted.
+   Before launch: sign supply MOUs, replace imagery with partner photography,
+   enable real photo review.
+2. **Contact details are placeholders** — `+267 7200 0000` /
+   `hello@rekabotswana.co.bw` in `src/config.json`. Update before any public
+   announcement.
+3. **No real payments yet** — by design; see `docs/decisions.md`.
+4. **Consumer Protection Act** is cited without a year (sources conflict:
+   1998 vs 2018). Confirm against the statute book before legal sign-off.
+5. **Morama Crunch Bars** — no verified Botswana producer found; concept SKU
+   pending feasibility study. **Kalahari Honey** — real brand exists but
+   ownership/supply status post-2021 (founder deceased) is UNVERIFIED; our
+   listing deliberately avoids the brand name.
+6. **Delivery fees & lead times** in `config.json` are working estimates, not
+   carrier quotes.
+7. **Imagery** — AI-generated illustrative photography for the 17 SKUs; no
+   rights issues, but it is not photography of real products.
+8. **VAT** — BWP prices; VAT handling stated generically; confirm VAT
+   registration and invoice wording with an accountant.
+9. Build uses the pinned `gatsby-sharp` stub (no native libvips); if your
+   environment can run sharp/libvips normally, remove the stub and the lockfile
+   entries per `docs/decisions.md`.
+
+## Docs
+
+- [`docs/research-botswana-made-portfolio.md`](docs/research-botswana-made-portfolio.md) —
+  the deep research: real Botswana-made landscape, named producers, sources,
+  and the alignment table for every SKU.
+- [`docs/research-product-pipeline.md`](docs/research-product-pipeline.md) —
+  round 2: price-verified retail anchors (chocolate, biltong, phane, Rusks,
+  wool craft) and the five SKUs added to the catalogue.
+- [`docs/decisions.md`](docs/decisions.md) — why the architecture, ordering
+  model, offline strategy and data choices are what they are.
+
+## Verification commands
 
 ```bash
-npm uninstall cypress
+npm run build                 # must succeed; ~40 routes incl. 12 PDPs
+npm run serve                 # then open http://localhost:5000
 ```
-
-## Next Steps with this theme
-
-This project is intended to be extended by you! We wanted to make possible to replace parts of it with your own tools and data sources. If you're interested on a direction, you can refer to Matter's [how to use section](https://gatsby-ecommerce-theme.netlify.app/how-to-use/) in this project or you may want to consider using [Matter's toolset with their JAMM framework](https://matterdesign.com.au/service/headless-commerce-with-jamm/) which includes some projects like:
-- [BigCommerce](https://bigcommerce.zfrcsk.net/c/2429593/854992/2941) for a headless e-commerce solution
-- [Builder](https://www.builder.io) as a CMS for the blog articles or other content creation
-- [Klaviyo](https://www.klaviyo.com/) for any email or SMS marketing automation

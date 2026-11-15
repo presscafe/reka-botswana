@@ -109,3 +109,21 @@
     
 
 }
+.emptyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 64px 32px;
+    text-align: center;
+}
+
+.emptyContainer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.emptyHint {
+    color: var(--grey-placeholder);
+    font-size: 14px !important;
+}

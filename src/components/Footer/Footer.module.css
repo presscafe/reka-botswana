@@ -249,3 +249,41 @@
         margin-right: 0px;
     }
 }
+
+.emailContainer {
+    margin-top: 16px;
+}
+
+.emailLink {
+    color: var(--standard-black);
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px solid var(--standard-gold);
+}
+
+.paymentBadge {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--grey-one);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: var(--standard-dark-grey);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+
+.finePrint {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--grey-placeholder);
+}
+
+@media (max-width: 800px) {
+    .creditCardContainer {
+        flex-wrap: wrap;
+    }
+}
