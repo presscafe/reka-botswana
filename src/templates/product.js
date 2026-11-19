@@ -20,6 +20,7 @@ import ProductCardGrid from '../components/ProductCardGrid';
 import AddItemNotificationContext from '../context/AddItemNotificationProvider';
 import { useCart } from '../context/CartContext';
 import Config from '../config.json';
+import { whatsAppLink, absoluteUrl, SITE_URL, SITE_NAME } from '../helpers/seo';
 
 const ProductTemplate = ({ pageContext }) => {
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
@@ -72,9 +73,27 @@ const ProductTemplate = ({ pageContext }) => {
     .filter(Boolean)
     .join('\n');
 
-  const waOrderLink = `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(
-    orderLines
-  )}`;
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: [absoluteUrl(product.image)],
+    sku: product.productCode,
+    brand: { '@type': 'Brand', name: product.vendor || SITE_NAME },
+    countryOfOrigin: 'BW',
+    offers: {
+      '@type': 'Offer',
+      url: absoluteUrl(`/product/${product.slug}`),
+      priceCurrency: 'BWP',
+      price: String(product.price),
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    },
+  };
+
+  const waOrderLink = whatsAppLink(Config.contact.whatsapp, orderLines);
 
   const handleAddToBag = () => {
     addItem(
@@ -99,7 +118,11 @@ const ProductTemplate = ({ pageContext }) => {
         <meta name="description" content={product.description} />
         <meta property="og:title" content={`${product.name} — Reka Botswana`} />
         <meta property="og:description" content={product.description} />
-        <meta property="og:image" content={product.image} />
+        <meta property="og:image" content={absoluteUrl(product.image)} />
+        <meta property="og:type" content="product" />
+        <meta property="product:price:amount" content={String(product.price)} />
+        <meta property="product:price:currency" content="BWP" />
+        <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
       </Helmet>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>

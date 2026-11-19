@@ -7,6 +7,10 @@ module.exports = {
     author: `Reka Botswana`,
   },
   plugins: [
+    // Generates /sitemap-index.xml at build time (siteUrl from siteMetadata).
+    `gatsby-plugin-sitemap`,
+    // react-helmet support (built HTML extraction for <Helmet> tags)
+    `gatsby-plugin-react-helmet`,
     // PWA delivery: hand-audited service worker in /static/sw.js (registered
     // in production only from components/Layout), manifest in
     // /static/site.webmanifest. Workbox-based plugins were avoided to keep

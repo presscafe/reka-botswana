@@ -17,8 +17,7 @@ const BlogPreview = (props) => {
         className={styles.blogPreviewImage}
         alt={altImage}
         src={image}
-        role={'figure'}
-      />
+        role={'figure'} loading={'lazy'} decoding={'async'} />
       <span className={styles.category}>{category}</span>
       <h4 className={styles.title}>
         <Link to={link}>{title}</Link>

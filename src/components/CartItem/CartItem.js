@@ -20,7 +20,7 @@ const CartItem = (props) => {
         role={'presentation'}
         onClick={() => navigate(slug ? `/product/${slug}` : '/shop')}
       >
-        <img src={image} alt={alt || name}></img>
+        <img src={image} alt={alt || name} loading={'lazy'} decoding={'async'}></img>
       </div>
       <div className={styles.itemContainer}>
         <span className={styles.name}>{name}</span>

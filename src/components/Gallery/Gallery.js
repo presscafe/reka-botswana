@@ -15,7 +15,7 @@ const Gallery = (props) => {
     return images?.map((imageObject, index) => {
       return (
         <div key={index} className={styles.imageContainer}>
-          <img alt={imageObject.alt} src={imageObject.image} />
+          <img alt={imageObject.alt} src={imageObject.image} decoding={'async'} fetchpriority={'high'} />
         </div>
       );
     });
@@ -27,7 +27,7 @@ const Gallery = (props) => {
         {images?.map((imageObject, index) => {
           return (
             <div key={index} className={styles.imageContainer}>
-              <img alt={imageObject.alt} src={imageObject.image} />
+              <img alt={imageObject.alt} src={imageObject.image} decoding={'async'} fetchpriority={'high'} />
             </div>
           );
         })}

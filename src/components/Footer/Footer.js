@@ -6,12 +6,11 @@ import Container from '../Container';
 import Button from '../Button';
 import Config from '../../config.json';
 import * as styles from './Footer.module.css';
+import { whatsAppLink } from '../../helpers/seo';
 
 const Footer = (prop) => {
   const { contact, paymentMethods } = Config;
-  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I would like help with my order.'
-  )}`;
+  const waLink = whatsAppLink(contact.whatsapp, 'Hello Reka Botswana — I would like help with my order.');
 
   const renderLinks = (linkCollection) => {
     return (

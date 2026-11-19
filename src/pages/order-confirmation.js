@@ -5,12 +5,11 @@ import Button from '../components/Button';
 import Container from '../components/Container';
 import Layout from '../components/Layout/Layout';
 import Config from '../config.json';
+import { whatsAppLink } from '../helpers/seo';
 
 const OrderConfirmationPage = (props) => {
   const { contact } = Config;
-  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — following up on my order enquiry.'
-  )}`;
+  const waLink = whatsAppLink(contact.whatsapp, 'Hello Reka Botswana — following up on my order enquiry.');
 
   return (
     <Layout disablePaddingBottom>

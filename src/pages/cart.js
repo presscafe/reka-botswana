@@ -12,6 +12,7 @@ import Config from '../config.json';
 import { useCart } from '../context/CartContext';
 
 import * as styles from './cart.module.css';
+import { whatsAppLink } from '../helpers/seo';
 
 const CartPage = (props) => {
   const { items, subtotal, count, clearCart } = useCart();
@@ -78,7 +79,7 @@ const CartPage = (props) => {
 
     if (channel === 'whatsapp') {
       window.open(
-        `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(message)}`,
+        whatsAppLink(Config.contact.whatsapp, message),
         '_blank',
         'noopener'
       );
@@ -108,7 +109,7 @@ const CartPage = (props) => {
             <div className={styles.loginContainer}>
               <a
                 className={styles.helpLink}
-                href={`https://wa.me/${Config.contact.whatsapp}`}
+                href={whatsAppLink(Config.contact.whatsapp)}
                 target={'_blank'}
                 rel={'noreferrer noopener'}
               >
