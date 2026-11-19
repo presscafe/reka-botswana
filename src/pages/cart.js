@@ -12,7 +12,8 @@ import Config from '../config.json';
 import { useCart } from '../context/CartContext';
 
 import * as styles from './cart.module.css';
-import { whatsAppLink } from '../helpers/seo';
+import { whatsAppLink, absoluteUrl } from '../helpers/seo';
+import Helmet from 'react-helmet';
 
 const CartPage = (props) => {
   const { items, subtotal, count, clearCart } = useCart();
@@ -94,6 +95,12 @@ const CartPage = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Your bag — Reka Botswana</title>
+        <meta name="description" content="Review your bag and send your order enquiry to the maker." />
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="canonical" href={absoluteUrl('/cart')} />
+      </Helmet>
       <div className={styles.contentContainer}>
         <Container size={'large'} spacing={'min'}>
           <div className={styles.headerContainer}>

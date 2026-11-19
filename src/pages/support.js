@@ -8,6 +8,8 @@ import Layout from '../components/Layout/Layout';
 import ThemeLink from '../components/ThemeLink';
 import Policy from '../components/Policy';
 import Container from '../components/Container';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../helpers/seo';
 
 const SupportPage = (props) => {
   const subpages = [
@@ -68,6 +70,14 @@ const SupportPage = (props) => {
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>Support & Policies — delivery, payment, privacy | Reka Botswana</title>
+        <meta name="description" content="Support for orders, delivery and returns, plus Reka Botswana privacy, ordering and maker policies." />
+        <meta property="og:title" content="Support & Policies — delivery, payment, privacy | Reka Botswana" />
+        <meta property="og:description" content="Support for orders, delivery and returns, plus Reka Botswana privacy, ordering and maker policies." />
+        <meta property="og:url" content={absoluteUrl('/support')} />
+        <link rel="canonical" href={absoluteUrl('/support')} />
+      </Helmet>
       <div className={styles.root}>
         <Banner
           maxWidth={'650px'}

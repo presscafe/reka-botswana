@@ -93,9 +93,10 @@ const Footer = (prop) => {
                 ))}
               </div>
               <span>
-                © {new Date().getFullYear()} Reka Botswana. Made-in-Botswana
-                curation — makers are credited on each product page. Built on
-                the open-source Gatsby e-commerce theme by{' '}
+                © {new Date().getFullYear()} Reka Botswana. Prices in Botswana
+                Pula (BWP); VAT, where applicable, is reflected on the
+                maker's invoice. Makers are credited on each product page.
+                Built on the open-source Gatsby e-commerce theme by{' '}
                 <Button target={true} href="https://matterdesign.com.au/">
                   Matter Design
                 </Button>

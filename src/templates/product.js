@@ -119,6 +119,8 @@ const ProductTemplate = ({ pageContext }) => {
         <meta property="og:title" content={`${product.name} — Reka Botswana`} />
         <meta property="og:description" content={product.description} />
         <meta property="og:image" content={absoluteUrl(product.image)} />
+        <meta property="og:url" content={absoluteUrl(`/product/${product.slug}`)} />
+        <link rel="canonical" href={absoluteUrl(`/product/${product.slug}`)} />
         <meta property="og:type" content="product" />
         <meta property="product:price:amount" content={String(product.price)} />
         <meta property="product:price:currency" content="BWP" />

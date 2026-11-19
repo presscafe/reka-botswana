@@ -8,7 +8,8 @@ import Button from '../components/Button';
 import Config from '../config.json';
 
 import * as styles from './about.module.css';
-import { whatsAppLink } from '../helpers/seo';
+import { whatsAppLink, absoluteUrl } from '../helpers/seo';
+import Helmet from 'react-helmet';
 
 const AboutPage = (props) => {
   const storyRef = useRef();
@@ -29,6 +30,14 @@ const AboutPage = (props) => {
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>About Reka Botswana — how we verify makers</title>
+        <meta name="description" content="Why Reka Botswana exists: verified Made-in-Botswana quality, real workshop stories, and how makers can list their products." />
+        <meta property="og:title" content="About Reka Botswana — how we verify makers" />
+        <meta property="og:description" content="Why Reka Botswana exists: verified Made-in-Botswana quality, real workshop stories, and how makers can list their products." />
+        <meta property="og:url" content={absoluteUrl('/about')} />
+        <link rel="canonical" href={absoluteUrl('/about')} />
+      </Helmet>
       <div className={styles.root}>
         {/* Hero Container */}
         <Hero

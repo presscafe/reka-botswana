@@ -9,6 +9,8 @@ import Button from '../components/Button';
 import { searchProducts } from '../helpers/catalog';
 
 import * as styles from './search.module.css';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../helpers/seo';
 
 const SearchPage = (props) => {
   const [query, setQuery] = useState('');
@@ -27,6 +29,15 @@ const SearchPage = (props) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Search — Reka Botswana</title>
+        <meta name="description" content="Search the Reka Botswana catalogue." />
+        <meta property="og:title" content="Search — Reka Botswana" />
+        <meta property="og:description" content="Search the Reka Botswana catalogue." />
+        <meta property="og:url" content={absoluteUrl('/search')} />
+        <link rel="canonical" href={absoluteUrl('/search')} />
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>
           <Breadcrumbs

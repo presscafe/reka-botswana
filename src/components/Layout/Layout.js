@@ -94,6 +94,7 @@ const Layout = ({ props, children, disablePaddingBottom = false }) => {
         {/* Icons & PWA manifest */}
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="canonical" href={SITE_URL} />
         <link rel="manifest" href="/site.webmanifest" />
       </Helmet>
 

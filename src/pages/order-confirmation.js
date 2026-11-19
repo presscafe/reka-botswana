@@ -5,7 +5,8 @@ import Button from '../components/Button';
 import Container from '../components/Container';
 import Layout from '../components/Layout/Layout';
 import Config from '../config.json';
-import { whatsAppLink } from '../helpers/seo';
+import { whatsAppLink, absoluteUrl } from '../helpers/seo';
+import Helmet from 'react-helmet';
 
 const OrderConfirmationPage = (props) => {
   const { contact } = Config;
@@ -13,6 +14,15 @@ const OrderConfirmationPage = (props) => {
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>Order enquiry received — Reka Botswana</title>
+        <meta name="description" content="Your order enquiry has been recorded. The maker confirms availability before any payment is taken." />
+        <meta property="og:title" content="Order enquiry received — Reka Botswana" />
+        <meta property="og:description" content="Your order enquiry has been recorded. The maker confirms availability before any payment is taken." />
+        <meta property="og:url" content={absoluteUrl('/order-confirmation')} />
+        <link rel="canonical" href={absoluteUrl('/order-confirmation')} />
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       <Container size={'medium'}>
         <div className={styles.root}>
           <div className={styles.check} aria-hidden={'true'}>✓</div>

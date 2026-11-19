@@ -102,6 +102,21 @@ const netlifyToml = fs.readFileSync(path.join(root, 'netlify.toml'), 'utf8');
 if (!netlifyToml.includes('sw.js')) fail('netlify.toml lost the sw.js no-cache rule');
 else ok('netlify.toml sw.js no-cache rule present');
 
+// exactly one <title> per page
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(file, 'utf8');
+  const titles = (html.match(/<title[\s>]/g) || []).length;
+  if (titles !== 1) fail(`expected exactly 1 <title> in ${path.relative(publicDir, file)}, found ${titles}`);
+}
+ok('every built page has exactly one <title>');
+
+// no literal "undefined" in visible markup text (cheap sentinel for template bugs)
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(file, 'utf8');
+  if (/>[^<{}]*undefined[^<{}]*</.test(html)) fail(`literal "undefined" rendered in ${path.relative(publicDir, file)}`);
+}
+ok('no literal undefined rendered in markup');
+
 // sitemap generated
 if (fs.existsSync(path.join(publicDir, 'sitemap/sitemap-index.xml'))) ok('sitemap generated');
 else fail('sitemap missing (gatsby-plugin-sitemap)');
