@@ -7,12 +7,22 @@ import Layout from '../../components/Layout/Layout';
 
 import { getJournal } from '../../helpers/catalog';
 import * as styles from './index.module.css';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../../helpers/seo';
 
 const JournalPage = (props) => {
   const articles = getJournal();
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>Journal — Made-in-Botswana stories & guides | Reka Botswana</title>
+        <meta name="description" content="Stories, buying guides and maker spotlights from the Botswana-made community." />
+        <meta property="og:title" content="Journal — Made-in-Botswana stories & guides | Reka Botswana" />
+        <meta property="og:description" content="Stories, buying guides and maker spotlights from the Botswana-made community." />
+        <meta property="og:url" content={absoluteUrl('/journal')} />
+        <link rel="canonical" href={absoluteUrl('/journal')} />
+      </Helmet>
       <div className={styles.root}>
         <Hero
           maxWidth={'520px'}

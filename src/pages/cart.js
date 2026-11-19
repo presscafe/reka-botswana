@@ -12,6 +12,8 @@ import Config from '../config.json';
 import { useCart } from '../context/CartContext';
 
 import * as styles from './cart.module.css';
+import { whatsAppLink, absoluteUrl } from '../helpers/seo';
+import Helmet from 'react-helmet';
 
 const CartPage = (props) => {
   const { items, subtotal, count, clearCart } = useCart();
@@ -78,7 +80,7 @@ const CartPage = (props) => {
 
     if (channel === 'whatsapp') {
       window.open(
-        `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(message)}`,
+        whatsAppLink(Config.contact.whatsapp, message),
         '_blank',
         'noopener'
       );
@@ -93,6 +95,12 @@ const CartPage = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Your bag — Reka Botswana</title>
+        <meta name="description" content="Review your bag and send your order enquiry to the maker." />
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="canonical" href={absoluteUrl('/cart')} />
+      </Helmet>
       <div className={styles.contentContainer}>
         <Container size={'large'} spacing={'min'}>
           <div className={styles.headerContainer}>
@@ -108,7 +116,7 @@ const CartPage = (props) => {
             <div className={styles.loginContainer}>
               <a
                 className={styles.helpLink}
-                href={`https://wa.me/${Config.contact.whatsapp}`}
+                href={whatsAppLink(Config.contact.whatsapp)}
                 target={'_blank'}
                 rel={'noreferrer noopener'}
               >

@@ -5,12 +5,22 @@ import Layout from '../components/Layout/Layout';
 import Banner from '../components/Banner';
 import Container from '../components/Container';
 import Config from '../config.json';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../helpers/seo';
 
 const FaqPage = (props) => {
   const { contact, ordering, paymentMethods } = Config;
 
   return (
     <Layout>
+      <Helmet>
+        <title>FAQ — ordering, delivery, payment | Reka Botswana</title>
+        <meta name="description" content="Answers on ordering on WhatsApp, delivery across Botswana, payment methods, and made-to-order lead times." />
+        <meta property="og:title" content="FAQ — ordering, delivery, payment | Reka Botswana" />
+        <meta property="og:description" content="Answers on ordering on WhatsApp, delivery across Botswana, payment methods, and made-to-order lead times." />
+        <meta property="og:url" content={absoluteUrl('/faq')} />
+        <link rel="canonical" href={absoluteUrl('/faq')} />
+      </Helmet>
       <div className={styles.root}>
         <Banner
           maxWidth={'650px'}

@@ -1,7 +1,7 @@
 # Reka Botswana — static PWA deployed from `public/`.
 # Works on Netlify and any static host that honours `_headers`.
 [build]
-  command = "gatsby build"
+  command = "gatsby build && npm run verify"
   publish = "public"
 
 [build.environment]
@@ -17,6 +17,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
 # Gatsby fingerprinted assets are immutable
 [[headers]]

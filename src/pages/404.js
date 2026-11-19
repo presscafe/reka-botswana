@@ -6,6 +6,8 @@ import Button from '../components/Button';
 import Container from '../components/Container';
 import FormInputField from '../components/FormInputField/FormInputField';
 import Layout from '../components/Layout';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../helpers/seo';
 
 const NotFoundPage = () => {
   const [search, setSearch] = useState('');
@@ -17,6 +19,15 @@ const NotFoundPage = () => {
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>Page not found — Reka Botswana</title>
+        <meta name="description" content="The page you were looking for does not exist." />
+        <meta property="og:title" content="Page not found — Reka Botswana" />
+        <meta property="og:description" content="The page you were looking for does not exist." />
+        <meta property="og:url" content={absoluteUrl('/404')} />
+        <link rel="canonical" href={absoluteUrl('/404')} />
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       <Container size={'medium'}>
         <div className={styles.root}>
           <h1>404</h1>

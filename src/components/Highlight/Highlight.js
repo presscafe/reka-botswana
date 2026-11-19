@@ -16,7 +16,7 @@ const Highlight = (props) => {
 
   return (
     <div className={styles.root}>
-      <img alt={altImage} src={image} className={styles.highlightImage} />
+      <img alt={altImage} src={image} className={styles.highlightImage} loading={'lazy'} decoding={'async'} />
       <div className={styles.contentContainer}>
         <h3>{title}</h3>
         <p>{description}</p>
@@ -24,8 +24,7 @@ const Highlight = (props) => {
         <img
           className={styles.miniImage}
           alt={miniImageAlt}
-          src={miniImage}
-        ></img>
+          src={miniImage} loading={'lazy'} decoding={'async'}></img>
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ const ProductCard = (props) => {
         tabIndex={0}
         aria-label={`View ${name}`}
       >
-        <img style={{ height: `${height}px` }} src={image} alt={imageAlt}></img>
+        <img style={{ height: `${height}px` }} src={image} alt={imageAlt} loading={'lazy'} decoding={'async'}></img>
         <button
           type="button"
           aria-label={`Quick add ${name} to bag`}

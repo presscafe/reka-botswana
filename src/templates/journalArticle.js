@@ -7,6 +7,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/Container';
 import Layout from '../components/Layout/Layout';
 import { getJournalBySlug } from '../helpers/catalog';
+import { absoluteUrl } from '../helpers/seo';
 
 const JournalArticleTemplate = ({ pageContext }) => {
   const article = getJournalBySlug(pageContext.slug);
@@ -31,8 +32,10 @@ const JournalArticleTemplate = ({ pageContext }) => {
         <meta name="description" content={article.excerpt} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
-        <meta property="og:image" content={article.image} />
+        <meta property="og:image" content={absoluteUrl(article.image)} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={absoluteUrl(`/journal/${article.slug}`)} />
+        <link rel="canonical" href={absoluteUrl(`/journal/${article.slug}`)} />
       </Helmet>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>

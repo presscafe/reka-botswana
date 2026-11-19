@@ -8,6 +8,8 @@ import Button from '../components/Button';
 import Config from '../config.json';
 
 import * as styles from './about.module.css';
+import { whatsAppLink, absoluteUrl } from '../helpers/seo';
+import Helmet from 'react-helmet';
 
 const AboutPage = (props) => {
   const storyRef = useRef();
@@ -23,15 +25,19 @@ const AboutPage = (props) => {
     }
   };
 
-  const makersWhatsApp = `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I run a Botswana workshop and would like to list my products.'
-  )}`;
-  const corporateWhatsApp = `https://wa.me/${Config.contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I need a quote for corporate wear (quantities, sizes, logo, deadline).'
-  )}`;
+  const makersWhatsApp = whatsAppLink(Config.contact.whatsapp, 'Hello Reka Botswana — I run a Botswana workshop and would like to list my products.');
+  const corporateWhatsApp = whatsAppLink(Config.contact.whatsapp, 'Hello Reka Botswana — I need a quote for corporate wear (quantities, sizes, logo, deadline).');
 
   return (
     <Layout disablePaddingBottom>
+      <Helmet>
+        <title>About Reka Botswana — how we verify makers</title>
+        <meta name="description" content="Why Reka Botswana exists: verified Made-in-Botswana quality, real workshop stories, and how makers can list their products." />
+        <meta property="og:title" content="About Reka Botswana — how we verify makers" />
+        <meta property="og:description" content="Why Reka Botswana exists: verified Made-in-Botswana quality, real workshop stories, and how makers can list their products." />
+        <meta property="og:url" content={absoluteUrl('/about')} />
+        <link rel="canonical" href={absoluteUrl('/about')} />
+      </Helmet>
       <div className={styles.root}>
         {/* Hero Container */}
         <Hero

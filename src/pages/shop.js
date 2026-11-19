@@ -8,6 +8,8 @@ import Layout from '../components/Layout';
 import ProductCardGrid from '../components/ProductCardGrid';
 import { allProducts } from '../helpers/catalog';
 import Config from '../config.json';
+import Helmet from 'react-helmet';
+import { absoluteUrl } from '../helpers/seo';
 
 const CATEGORIES = [
   { label: 'All', value: 'all' },
@@ -76,6 +78,14 @@ const ShopPage = (props) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Shop Made in Botswana — clothing, pantry, beauty & craft | Reka Botswana</title>
+        <meta name="description" content="Browse verified Made-in-Botswana clothing, pantry, beauty and craft from real workshops. Order on WhatsApp; pay only after the maker confirms availability." />
+        <meta property="og:title" content="Shop Made in Botswana — clothing, pantry, beauty & craft | Reka Botswana" />
+        <meta property="og:description" content="Browse verified Made-in-Botswana clothing, pantry, beauty and craft from real workshops. Order on WhatsApp; pay only after the maker confirms availability." />
+        <meta property="og:url" content={absoluteUrl('/shop')} />
+        <link rel="canonical" href={absoluteUrl('/shop')} />
+      </Helmet>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>
           <div className={styles.breadcrumbContainer}>

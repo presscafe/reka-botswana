@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    env:
+      # Native image pipeline (libvips) is stubbed via vendor/gatsby-sharp-stub;
+      # mirror netlify.toml and skip optional native downloads.
+      NPM_CONFIG_OMIT: optional
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify built site
+        run: npm run verify

@@ -90,12 +90,52 @@ chocolate anchors are verified retail observations (Earth Vitamins ~P22/50 g;
 Sweet Sensations Kgeru P33/80 g; Kalahari Chocolates giftables P142–217).
 Alcohol (KBL/St Louis) and therapeutic-claim lanes deliberately excluded.
 
+## Phase 1 — SEO / verification hardening (2026-11-15, PR #2)
+
+- Sitemap: `gatsby-plugin-sitemap@5.25.0` emits `/sitemap/sitemap-index.xml`
+  (+ `sitemap-0.xml`); `static/robots.txt` points crawlers at it.
+- Head tags actually render now: `gatsby-plugin-react-helmet@5.25.0` was a
+  missing peer of react-helmet in this Gatsby 4 setup — before it, built HTML
+  contained zero `<title>`/meta/JSON-LD (the template had them; the plugin
+  never flushed them). Site-wide `Organization`/`WebSite` JSON-LD and
+  per-PDP `Product` JSON-LD (with BWP offer) now ship; 79 JSON-LD blocks
+  parse cleanly.
+- Absolute `og:image` (domain-anchored), `twitter:card`, og:type=product with
+  price meta, single source of truth in `src/helpers/seo.js`.
+- a11y: skip-to-content link, `<main id="main">`, `:focus-visible` gold ring,
+  `prefers-reduced-motion` support; below-fold images lazy+async; PDP gallery
+  eager with `fetchpriority=high`.
+- WhatsApp deep links centralised: `whatsAppLink()` in `src/helpers/seo.js`
+  strips non-digits (wa.me requirement); all call sites rewired.
+- `scripts/verify-build.js` (`npm run verify`): post-build contract —
+  asset refs, expected routes, PWA files, sitemap, forbidden strings,
+  JSON-LD parse. Netlify runs `gatsby build && npm run verify`; GitHub
+  Actions CI mirrors the same.
+
+## Phase 2 — production SEO hygiene (2026-11-15, PR #2)
+
+- Every content page now emits its own `<title>`, description, absolute
+  `og:url`, and `canonical`; cart/search/order-confirmation/404 are
+  `noindex,nofollow`; Layout provides the site-wide canonical/og:url
+  fallback (home).
+- journal/product templates: absolute `og:image`, `og:url`, canonical.
+- Footer carries a BWP/VAT invoice note (VAT reflected on maker invoice
+  where applicable — no inclusion/exclusion claim made).
+- `static/sw.js` bumped to `reka-v2`; unreferenced `static/support.png`
+  removed (was 504K).
+- `verify-build.js` now also enforces exactly one `<title>` per built
+  page and forbids literal "undefined" in rendered markup — the build
+  fails if either regresses.
+- Home canonical = site root; subpages get page-level canonicals
+  (react-helmet nesting: inner wins) — verified in built output.
+
 ## Verification status (as of commit)
 
-- `npm run build` passes (Gatsby 4, ~40 routes).
-- Serve smoke: `/`, `/shop`, `/cart`, `/about`, `/faq`, `/support`, `/journal`,
-  `/search`, `/order-confirmation`, all 12 PDPs, journal articles, `/404.html`,
-  `sw.js`, `site.webmanifest`, icons — all 200/301 as expected.
+- `npm run build` passes (Gatsby 4, 32 HTML pages / 31 routes).
+- `npm run verify` passes: assets, routes (incl. all 17 PDPs + journal),
+  sw.js/manifest/icons/_headers/netlify.toml, sitemap, 79 JSON-LD blocks.
+- Serve smoke: `/`, `/shop/`, `/sitemap/sitemap-index.xml`, `/robots.txt`,
+  PDP routes — all 200.
 - Not yet verified: offline behaviour in a real browser profile, service
   worker install/activation lifecycle, checkout WhatsApp deep-link on
   iOS/Android, screen-reader pass. PWABuilder/Lighthouse audit pending.

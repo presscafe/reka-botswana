@@ -8,7 +8,7 @@
  *
  * Bump SW_VERSION on every production deploy that must invalidate caches.
  */
-const SW_VERSION = 'reka-v1';
+const SW_VERSION = 'reka-v2';
 const STATIC_CACHE = `${SW_VERSION}-static-v1`;
 const PAGES_CACHE = `${SW_VERSION}-pages-v1`;
 const KNOWN_CACHES = [STATIC_CACHE, PAGES_CACHE];

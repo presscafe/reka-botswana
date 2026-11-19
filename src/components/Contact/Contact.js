@@ -3,12 +3,11 @@ import Button from '../Button';
 import Config from '../../config.json';
 
 import * as styles from './Contact.module.css';
+import { whatsAppLink } from '../../helpers/seo';
 
 const Contact = (props) => {
   const { contact } = Config;
-  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I have a question.'
-  )}`;
+  const waLink = whatsAppLink(contact.whatsapp, 'Hello Reka Botswana — I have a question.');
 
   return (
     <div className={styles.root}>

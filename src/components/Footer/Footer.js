@@ -6,12 +6,11 @@ import Container from '../Container';
 import Button from '../Button';
 import Config from '../../config.json';
 import * as styles from './Footer.module.css';
+import { whatsAppLink } from '../../helpers/seo';
 
 const Footer = (prop) => {
   const { contact, paymentMethods } = Config;
-  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I would like help with my order.'
-  )}`;
+  const waLink = whatsAppLink(contact.whatsapp, 'Hello Reka Botswana — I would like help with my order.');
 
   const renderLinks = (linkCollection) => {
     return (
@@ -94,9 +93,10 @@ const Footer = (prop) => {
                 ))}
               </div>
               <span>
-                © {new Date().getFullYear()} Reka Botswana. Made-in-Botswana
-                curation — makers are credited on each product page. Built on
-                the open-source Gatsby e-commerce theme by{' '}
+                © {new Date().getFullYear()} Reka Botswana. Prices in Botswana
+                Pula (BWP); VAT, where applicable, is reflected on the
+                maker's invoice. Makers are credited on each product page.
+                Built on the open-source Gatsby e-commerce theme by{' '}
                 <Button target={true} href="https://matterdesign.com.au/">
                   Matter Design
                 </Button>

@@ -5,13 +5,12 @@ import Config from '../../config.json';
 import Icon from '../Icons/Icon';
 
 import * as styles from './MobileNavigation.module.css';
+import { whatsAppLink } from '../../helpers/seo';
 
 const MobileNavigation = (props) => {
   const { close } = props;
   const { contact } = Config;
-  const waLink = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    'Hello Reka Botswana — I have a question.'
-  )}`;
+  const waLink = whatsAppLink(contact.whatsapp, 'Hello Reka Botswana — I have a question.');
 
   return (
     <div className={styles.root}>
