@@ -112,6 +112,23 @@ Alcohol (KBL/St Louis) and therapeutic-claim lanes deliberately excluded.
   JSON-LD parse. Netlify runs `gatsby build && npm run verify`; GitHub
   Actions CI mirrors the same.
 
+## Phase 2 — production SEO hygiene (2026-11-15, PR #2)
+
+- Every content page now emits its own `<title>`, description, absolute
+  `og:url`, and `canonical`; cart/search/order-confirmation/404 are
+  `noindex,nofollow`; Layout provides the site-wide canonical/og:url
+  fallback (home).
+- journal/product templates: absolute `og:image`, `og:url`, canonical.
+- Footer carries a BWP/VAT invoice note (VAT reflected on maker invoice
+  where applicable — no inclusion/exclusion claim made).
+- `static/sw.js` bumped to `reka-v2`; unreferenced `static/support.png`
+  removed (was 504K).
+- `verify-build.js` now also enforces exactly one `<title>` per built
+  page and forbids literal "undefined" in rendered markup — the build
+  fails if either regresses.
+- Home canonical = site root; subpages get page-level canonicals
+  (react-helmet nesting: inner wins) — verified in built output.
+
 ## Verification status (as of commit)
 
 - `npm run build` passes (Gatsby 4, 32 HTML pages / 31 routes).
