@@ -18,7 +18,11 @@ npm install          # node >= 18
 npm run develop      # http://localhost:8000
 npm run build        # production build → public/
 npm run serve        # serve the production build on :5000
+npm run verify       # post-build contract: assets, routes, PWA, sitemap, JSON-LD
 ```
+
+CI (GitHub Actions, `.github/workflows/ci.yml`) runs install → build → verify
+on every PR and push to `main`. Netlify runs the same gate.
 
 ## What this is
 
@@ -34,6 +38,10 @@ marketplace:
 - **PWA** — installable (`static/site.webmanifest`), offline-capable
   (`static/sw.js`, registered in production only), security headers via
   `netlify.toml` / `static/_headers`, `static/_redirects` for retired routes.
+- **SEO** — `<title>`/meta/OG/Twitter + JSON-LD (`Organization`, `WebSite`,
+  per-PDP `Product` with BWP offer) actually ship in built HTML via
+  `gatsby-plugin-react-helmet`; `gatsby-plugin-sitemap` emits
+  `/sitemap/sitemap-index.xml`; `robots.txt` points at it.
 - **Self-hosted fonts** (@fontsource) — zero third-party runtime requests.
 
 ## Project layout
