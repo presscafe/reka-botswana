@@ -93,7 +93,7 @@ try {
 const headersPath = path.join(root, 'static/_headers');
 if (fs.existsSync(headersPath)) {
   const headers = fs.readFileSync(headersPath, 'utf8');
-  for (const needle of ['X-Frame-Options', 'X-Content-Type-Options', '/sw.js', 'must-revalidate']) {
+  for (const needle of ['X-Frame-Options', 'X-Content-Type-Options', 'Strict-Transport-Security', '/sw.js', 'must-revalidate']) {
     if (!headers.includes(needle)) fail(`static/_headers missing "${needle}"`);
   }
   ok('static/_headers carries security + sw.js rules');

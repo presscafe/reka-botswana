@@ -7,7 +7,7 @@ module.exports = {
     author: `Reka Botswana`,
   },
   plugins: [
-    // Generates /sitemap-index.xml at build time (siteUrl from siteMetadata).
+    // Generates /sitemap/sitemap-index.xml at build time (siteUrl from siteMetadata).
     `gatsby-plugin-sitemap`,
     // react-helmet support (built HTML extraction for <Helmet> tags)
     `gatsby-plugin-react-helmet`,
